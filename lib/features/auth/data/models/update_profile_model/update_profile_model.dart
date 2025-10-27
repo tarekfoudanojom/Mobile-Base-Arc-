@@ -1,0 +1,101 @@
+import 'package:flutter_tdd/features/auth/data/models/percentage_model/percentage_model.dart';
+import 'package:flutter_tdd/features/auth/data/models/trust_rate_model/trust_rate_model.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'update_profile_model.freezed.dart';
+part 'update_profile_model.g.dart';
+
+@freezed
+class UpdateProfileModel with _$UpdateProfileModel{
+  const UpdateProfileModel._();
+  @JsonSerializable(explicitToJson: true)
+  factory UpdateProfileModel({
+    required int id,
+    @JsonKey(name: 'apple_id') dynamic appleId,
+    @JsonKey(name: 'google_id') dynamic googleId,
+    @JsonKey(name: 'facebook_id') dynamic facebookId,
+    @JsonKey(name: 'username') dynamic username,
+    @JsonKey(name: 'proUsername') dynamic proUsername,
+    required String password,
+    @JsonKey(name: 'first_name') required String firstName,
+    @JsonKey(name: 'last_name') required String lastName,
+    @JsonKey(name: 'working_experience') required int workingExperience,
+    @JsonKey(name: 'workbase')  required dynamic workBase,
+    @JsonKey(name: 'pay_rate') required int payRate,
+    @JsonKey(name: 'referral_code') required String referralCode,
+    @JsonKey(name: 'profile_type_id') required int profileTypeId,
+    required int status,
+    @JsonKey(name: 'profile_status') required PercentageModel profileStatus,
+    @JsonKey(name: 'trust_rate') required TrustRateModel trustRate,
+    @JsonKey(name: 'trust_rate_status') dynamic trustRateStatus,
+    int? views,
+    @JsonKey(name: 'signup_date') dynamic signupDate,
+    @JsonKey(name: 'signup_mode') required int signupMode,
+    @JsonKey(name: 'service_category_id') dynamic serviceCategoryId,
+    @JsonKey(name: 'email_confirmation_date') dynamic emailConfirmationDate,
+    @JsonKey(name: 'remember_code') String? rememberCode,
+    String? otp,
+    @JsonKey(name: 'sys_id')required int sysId,
+    dynamic platform,
+    @JsonKey(name: 'notification_count') int? notificationCount,
+    @JsonKey(name: 'last_signed_in') dynamic lastSignedIn,
+    dynamic invitedBy,
+    @JsonKey(name: 'stripe_cust_id_old_2') dynamic stripeCustIdOld2,
+    @JsonKey(name: 'braintree_cust') dynamic braintreeCust,
+    String? ipaddress,
+    @JsonKey(name: 'ic_last_update') dynamic icLastUpdate,
+    @JsonKey(name: 'delete_request_date') dynamic deleteRequestDate,
+    @JsonKey(name: 'date_deleted') dynamic dateDeleted,
+    @JsonKey(name: 'date_deactivated') dynamic dateDeactivated,
+    @JsonKey(name: 'sys_id_last_update') dynamic sysIdLastUpdate,
+    @JsonKey(name: 'sys_id_2') dynamic sysId2,
+    @JsonKey(name: 'socketId') required String socketId,
+    @JsonKey(name: 'isSocketOnline') required int isSocketOnline,
+    @JsonKey(name: 'generalRank') int? generalRank,
+    @JsonKey(name: 'categoryRank') int? categoryRank,
+    @JsonKey(name: 'backupUsername') dynamic backupUsername,
+    @JsonKey(name: 'deleteReason') dynamic deleteReason,
+    @JsonKey(name: 'bulkUpload') int? bulkUpload,
+    @JsonKey(name: 'stripe_cust_id_old') dynamic stripeCustIdOld,
+    @JsonKey(name: 'stripe_cust_id') dynamic stripeCustId,
+    @JsonKey(name: 'profile_deleted') required int profileDeleted,
+    @JsonKey(name: 'website') dynamic website,
+    @JsonKey(name: 'website_status') required int websiteStatus,
+    @JsonKey(name: 'gender') dynamic gender,
+    @JsonKey(name: 'birth_date') dynamic birthDate,
+    @JsonKey(name: 'is_verified') required int isVerified,
+    @JsonKey(name: 'company_name') dynamic companyName,
+    @JsonKey(name: 'brand_name') dynamic brandName,
+    @JsonKey(name: 'aboutus_id') dynamic aboutUsId,
+    @JsonKey(name: 'other_aboutus') dynamic otherAboutUs,
+    @JsonKey(name: 'min_price') dynamic minPrice,
+    @JsonKey(name: 'max_price') dynamic maxPrice,
+    @JsonKey(name: 'show_age') required int showAge,
+    @JsonKey(name: 'show_email') required int showEmail,
+    @JsonKey(name: 'show_whatsapp') required int showWhatsapp,
+    @JsonKey(name: 'whatsapp_number') dynamic whatsappNumber,
+    @JsonKey(name: 'bussiness_email') dynamic businessEmail,
+    @JsonKey(name: 'settings_order') dynamic settingsOrder,
+    @JsonKey(name: 'show_message_button') required int showMessageButton,
+    @JsonKey(name: 'show_send_offer_button') required int showSendOfferButton,
+    @JsonKey(name: 'about_public_status') required int aboutPublicStatus,
+    @JsonKey(name: 'price_range_public_status') required int priceRangePublicStatus,
+    @JsonKey(name: 'gender_public_status') required int genderPublicStatus,
+    @JsonKey(name: 'min_platform_price') dynamic minPlatformPrice,
+    @JsonKey(name: 'max_followers_no') dynamic maxFollowersNo,
+    @JsonKey(name: 'zid_agent') required int zidAgent,
+    @JsonKey(name: 'registration_step') required int registrationStep,
+    @JsonKey(name: 'otp_verified') required int otpVerified,
+    @JsonKey(name: 'location_public') dynamic locationPublic,
+    @JsonKey(name: 'contact_no') required String contactNo,
+    @JsonKey(name: 'email') required String email,
+    @JsonKey(name: 'all_platforms_price')dynamic allPlatformsPrice,
+    dynamic img,
+    @JsonKey(name: 'profile_types') required String profileTypes,
+
+  }) = _UpdateProfileModel;
+
+
+  factory UpdateProfileModel.fromJson(Map<String, dynamic> json) =>
+      _$UpdateProfileModelFromJson(json);
+}

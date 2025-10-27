@@ -1,0 +1,16 @@
+{
+  "ANDROID_APP_ID": "nojom.brand.live",
+  "APPLE_APP_ID": "com.24task.designing",
+  "APP_BASE_URL": "https://client-stage-api.nojom.com/",
+  "GIG_BASE_URL": "https://knecq9c098.execute-api.me-central-1.amazonaws.com/",
+  "SOCKET_BASE_URL": "https://chat-stage-api.nojom.com/",
+  "APP_ENV_NAME": "stage",
+  "WEBSITE_URL": "https://nojom.com/",
+  "GET_STREAM_KEY": "6vvexzemkyfu",
+  "PAYMENT_KEY": "public.kE59DQ46.LLtCm1hYxSQCvDtazPoiqVnSVSXWAJTpHmVOlsRx",
+  "PAYMENT_MERCHANT_ID": "merchant.com.nojom.brand.money.hash",
+  "APP_APP_NAME_EN": "Nojom Brands",
+  "APP_APP_NAME_AR": "Nojom Brands",
+  "APP_LOCAL_LOGO": "assets/images/icon.png"
+
+}

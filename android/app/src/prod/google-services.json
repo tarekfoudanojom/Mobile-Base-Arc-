@@ -1,0 +1,231 @@
+{
+  "project_info": {
+    "project_number": "778696382886",
+    "firebase_url": "https://nojoom-bd27b-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "nojoom-bd27b",
+    "storage_bucket": "nojoom-bd27b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778696382886:android:9fbd48ad55bcbf1ca69767",
+        "android_client_info": {
+          "package_name": "com.nojom.brands"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778696382886-rh2gfbegf154652hkbshvs4hi5322i2u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nojom.brands",
+            "certificate_hash": "8e9d8d8b88f2abf88b04721768d5bcd596161ed4"
+          }
+        },
+        {
+          "client_id": "778696382886-dtgij2ervakv87cv1ur6s0uh0atala8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-ntF_RMsB99CWAWQhu4R0Hv3kFAdEg5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "778696382886-dtgij2ervakv87cv1ur6s0uh0atala8i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "778696382886-0jvlotj5sma1468l0k2ntseua3s1rba6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.influencer.agent"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778696382886:android:f63f13be00ac0381a69767",
+        "android_client_info": {
+          "package_name": "com.nojom.stars"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778696382886-dtgij2ervakv87cv1ur6s0uh0atala8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-ntF_RMsB99CWAWQhu4R0Hv3kFAdEg5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "778696382886-dtgij2ervakv87cv1ur6s0uh0atala8i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "778696382886-0jvlotj5sma1468l0k2ntseua3s1rba6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.influencer.agent"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778696382886:android:7fa949a809a4f76ca69767",
+        "android_client_info": {
+          "package_name": "dev.nojom.brands"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778696382886-7h8ia89nhihi5o3nhaujgt77bdc14fri.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.nojom.brands",
+            "certificate_hash": "7f8bb4066283294c1e4e7205bbeabb66fd339ee2"
+          }
+        },
+        {
+          "client_id": "778696382886-ecuica71t0q0hiq5oqlulm9klvgmcvb7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.nojom.brands",
+            "certificate_hash": "8e9d8d8b88f2abf88b04721768d5bcd596161ed4"
+          }
+        },
+        {
+          "client_id": "778696382886-dtgij2ervakv87cv1ur6s0uh0atala8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-ntF_RMsB99CWAWQhu4R0Hv3kFAdEg5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "778696382886-dtgij2ervakv87cv1ur6s0uh0atala8i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "778696382886-0jvlotj5sma1468l0k2ntseua3s1rba6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.influencer.agent"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778696382886:android:bc543a48390680ffa69767",
+        "android_client_info": {
+          "package_name": "dev.nojom.stars"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778696382886-202mfc9opgp79i4e5i95ofhii0pqvro7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.nojom.stars",
+            "certificate_hash": "7f8bb4066283294c1e4e7205bbeabb66fd339ee2"
+          }
+        },
+        {
+          "client_id": "778696382886-p92nigcdvnpd4cp8umjoc3h6p6jhdsb8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dev.nojom.stars",
+            "certificate_hash": "3bd4227fa3440f4aa596f8455fed96b284d0d1cf"
+          }
+        },
+        {
+          "client_id": "778696382886-dtgij2ervakv87cv1ur6s0uh0atala8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-ntF_RMsB99CWAWQhu4R0Hv3kFAdEg5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "778696382886-dtgij2ervakv87cv1ur6s0uh0atala8i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "778696382886-0jvlotj5sma1468l0k2ntseua3s1rba6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.influencer.agent"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778696382886:android:de8fb1aed8090162a69767",
+        "android_client_info": {
+          "package_name": "nojom.brand.live"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778696382886-dtgij2ervakv87cv1ur6s0uh0atala8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-ntF_RMsB99CWAWQhu4R0Hv3kFAdEg5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "778696382886-dtgij2ervakv87cv1ur6s0uh0atala8i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "778696382886-0jvlotj5sma1468l0k2ntseua3s1rba6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.influencer.agent"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

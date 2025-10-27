@@ -1,0 +1,14 @@
+--------------------------
+<@U06F3NWTTV1> <@U07H177UF9D>
+CC: <@U07775DUDNW> <@U07K87RFJRL> <@U06F3PA3CSX> <@U08UT63Q8JH>
+
+----------- v 11.0.27+1
+1 - reaction position
+2- show gallery images when open camera like Whatsapp
+3- handle images picker to be like Whatsapp
+4- allow multi image editor like Whatsapp
+5- change send location to be like Whatsapp
+6- change location message and make it more better than before
+7- improve documents picker
+8- allow user to send images or documents when the user pick with back the chat screen
+

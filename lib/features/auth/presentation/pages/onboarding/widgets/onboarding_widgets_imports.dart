@@ -1,0 +1,22 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:flutter_tdd/core/constants/dimens.dart';
+import 'package:flutter_tdd/core/constants/gaps.dart';
+import 'package:flutter_tdd/core/localization/translate.dart';
+import 'package:flutter_tdd/core/routes/router_imports.gr.dart';
+import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
+import 'package:flutter_tdd/core/theme/text/app_text_style.dart';
+import 'package:flutter_tdd/core/widgets/app_button.dart';
+import 'package:flutter_tdd/features/auth/presentation/pages/onboarding/onboarding_imports.dart';
+import 'package:flutter_tdd/features/auth/presentation/widgets/star_logo_widget.dart';
+import 'package:flutter_tdd/res.dart';
+import 'package:get/get.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+part 'onboarding_app_bar_widget.dart';
+part 'walk_through_current_page_widget.dart';
+part'footer_buttons_widget.dart';
+part'footer_button_item_widget.dart';
+part'walk_through_indicator_widget.dart';

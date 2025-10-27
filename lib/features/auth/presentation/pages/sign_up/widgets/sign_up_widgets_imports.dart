@@ -1,0 +1,23 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_tdd/core/bloc/device_cubit/device_cubit.dart';
+import 'package:flutter_tdd/core/bloc/value_state_manager/value_state_manager_import.dart';
+import 'package:flutter_tdd/core/constants/CustomButtonAnimation.dart';
+import 'package:flutter_tdd/core/constants/dimens.dart';
+import 'package:flutter_tdd/core/constants/gaps.dart';
+import 'package:flutter_tdd/core/helpers/validator.dart';
+import 'package:flutter_tdd/core/theme/colors/app_colors.dart';
+import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
+import 'package:flutter_tdd/core/theme/text/app_text_style.dart';
+import 'package:flutter_tdd/core/widgets/GenericTextField.dart';
+import 'package:flutter_tdd/core/widgets/LoadingButton.dart';
+import 'package:flutter_tdd/core/widgets/phone_number_input_formater.dart';
+import 'package:flutter_tdd/features/auth/presentation/pages/sign_up/sign_up_imports.dart';
+import 'package:flutter_tdd/features/auth/presentation/widgets/password_field_widget.dart';
+import 'package:flutter_tdd/features/auth/presentation/widgets/phone_and_email_field_widget.dart';
+import 'package:flutter_tdd/core/localization/translate.dart';
+
+part'sign_up_form_widget.dart';
+part'login_widget.dart';
+part'done_button_widget.dart';

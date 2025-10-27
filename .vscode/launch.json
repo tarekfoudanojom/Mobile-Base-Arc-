@@ -1,0 +1,40 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+      {
+        "name": "Flutter Dev",
+        "request": "launch",
+        "type": "dart",
+        "program": "lib/main.dart",
+        "args": [
+          "--flavor",
+          "dev",
+          "--dart-define-from-file=.run/json/dev.json"
+        ]
+      },
+      {
+        "name": "Flutter Stage",
+        "request": "launch",
+        "type": "dart",
+        "program": "lib/main.dart",
+        "args": [
+          "--flavor",
+          "stage",
+          "--dart-define-from-file=.run/json/stage.json"
+        ]
+      },
+      {
+        "name": "Flutter Pro",
+        "request": "launch",
+        "type": "dart",
+        "program": "lib/main.dart",
+        "args": [
+          "--flavor",
+          "prod",
+          "--dart-define-from-file=.run/json/prod.json"
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,62 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.cursorrules
+.atom/
+.buildlog/
+.history
+.svn/
+linux/
+.linux/
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+
+# Web related
+lib/generated_plugin_registrant.dart
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+linux/flutter/ephemeral/.plugin_symlinks/device_info_plus
+linux/flutter/ephemeral/.plugin_symlinks/file_picker
+linux/flutter/ephemeral/.plugin_symlinks/file_selector_linux
+linux/flutter/ephemeral/.plugin_symlinks/flutter_keyboard_visibility_linux
+linux/flutter/ephemeral/.plugin_symlinks/flutter_local_notifications_linux
+linux/flutter/ephemeral/.plugin_symlinks/flutter_secure_storage_linux
+linux/flutter/ephemeral/.plugin_symlinks/image_picker_linux
+linux/flutter/ephemeral/.plugin_symlinks/open_file_linux
+linux/flutter/ephemeral/.plugin_symlinks/package_info_plus
+linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux
+linux/flutter/ephemeral/.plugin_symlinks/share_plus
+linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux
+linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux
+linux/flutter/ephemeral/.plugin_symlinks/wakelock_plus
