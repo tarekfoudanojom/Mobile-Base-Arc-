@@ -2,6 +2,19 @@
 
 This comprehensive guide walks you through creating a new feature in the Nojom Flutter application, based on actual patterns from the existing codebase.
 
+## 🎯 **Current Architecture (Simplified)**
+
+**Status:** This guide has been updated to reflect the current simplified architecture (October 2025).
+
+**Key Changes:**
+- ✅ No `brand/` or `star/` subdirectories - features go directly in `lib/features/`
+- ✅ Controllers in separate files inside page folders (using `part of` pattern)
+- ✅ Simple widgets as methods in page state (not separate files unless complex)
+- ✅ Minimal global state (DeviceCubit only)
+- ✅ `ApiNames` instead of `BrandApiNames`
+
+**Live Example:** Check `lib/features/auth/` for a working reference implementation.
+
 ---
 
 ## 📋 **Table of Contents**
@@ -27,9 +40,9 @@ Before writing any code, answer these questions:
 
 #### **Feature Definition**
 - [ ] What is the feature name? (e.g., `notifications`, `bookings`, `reviews`)
-- [ ] Is this a brand-specific or star-specific feature?
 - [ ] Does it require authentication?
 - [ ] What are the main user flows?
+- [ ] How many pages/screens are needed?
 
 #### **Data Requirements**
 - [ ] What API endpoints will be used?
@@ -65,58 +78,60 @@ Before writing any code, answer these questions:
 
 ```bash
 # Navigate to features directory
-cd lib/features/brand  # or lib/features/star
+cd lib/features
 
 # Create feature structure
 mkdir -p my_feature/{data,domain,presentation}
 mkdir -p my_feature/data/{data_source,repositories,models,enums}
-mkdir -p my_feature/domain/{entity,repositories,models,requesters,enums}
+mkdir -p my_feature/domain/{entity,repositories,enums}
 mkdir -p my_feature/presentation/{pages,widgets,manager}
 mkdir -p my_feature/presentation/manager/routes
 ```
 
+**Note:** Keep structure simple. Don't create `models` or `requesters` in domain unless truly needed.
+
 **Final Structure:**
 ```
-lib/features/brand/my_feature/
+lib/features/my_feature/
 ├── data/
 │   ├── data_source/
 │   │   ├── my_feature_data_source.dart          # Abstract data source
 │   │   └── impl_my_feature_data_source.dart     # Implementation
 │   ├── repositories/
 │   │   └── impl_my_feature_repository.dart      # Repository implementation
-│   ├── models/
+│   ├── models/                                   # (optional - only if needed)
 │   │   └── {model_name}_model/
 │   │       ├── {model_name}_model.dart          # Freezed model
 │   │       ├── {model_name}_model.freezed.dart  # Generated
 │   │       └── {model_name}_model.g.dart        # Generated
-│   └── enums/
+│   └── enums/                                    # (optional - only if needed)
 │       └── {enum_name}_enum.dart
 ├── domain/
 │   ├── entity/
-│   │   └── {entity_name}_params.dart
+│   │   └── {entity_name}_params.dart            # Request parameters
 │   ├── repositories/
 │   │   └── my_feature_repository.dart           # Abstract repository
-│   ├── models/
-│   │   └── {domain_model}.dart
-│   ├── requesters/
-│   │   └── {action}_requester.dart
-│   └── enums/
+│   └── enums/                                    # (optional - only if needed)
 │       └── {enum_name}_enum.dart
 └── presentation/
     ├── pages/
     │   └── {page_name}/
-    │       ├── {page_name}_imports.dart         # Import file
-    │       ├── {page_name}.dart                 # Page widget (part of imports)
+    │       ├── {page_name}_imports.dart         # All imports
+    │       ├── {page_name}_page.dart            # Page widget (part of imports)
     │       ├── {page_name}_controller.dart      # Controller (part of imports)
-    │       └── widgets/
-    │           ├── {widget_name}_widget.dart
-    │           └── {widgets}_imports.dart
-    ├── widgets/
+    │       └── widgets/                          # (optional - only for complex pages)
+    │           └── {widget_name}_widget.dart
+    ├── widgets/                                  # Shared feature widgets (optional)
     │   └── {shared_widget}.dart
     └── manager/
         └── routes/
             └── {feature}_routes.dart
 ```
+
+**Simplified from Auth Example:**
+- `domain/models/` and `domain/requesters/` removed (not needed in simple features)
+- Widgets folder optional - use methods in page state for simple UIs
+- Focus on essential structure only
 
 ---
 
@@ -126,12 +141,12 @@ The domain layer defines **what** the feature does, not **how** it does it.
 
 ### **Step 2: Define Repository Interface**
 
-**File:** `lib/features/brand/my_feature/domain/repositories/my_feature_repository.dart`
+**File:** `lib/features/my_feature/domain/repositories/my_feature_repository.dart`
 
 ```dart
 import 'package:flutter_tdd/core/http/models/result.dart';
-import 'package:flutter_tdd/features/brand/my_feature/data/models/item_model/item_model.dart';
-import 'package:flutter_tdd/features/brand/my_feature/domain/entity/create_item_params.dart';
+import 'package:flutter_tdd/features/my_feature/data/models/item_model/item_model.dart';
+import 'package:flutter_tdd/features/my_feature/domain/entity/create_item_params.dart';
 
 /// Repository interface for MyFeature
 /// Defines contracts for data operations
@@ -161,7 +176,7 @@ abstract class MyFeatureRepository {
 
 ### **Step 3: Create Domain Entities/Parameters**
 
-**File:** `lib/features/brand/my_feature/domain/entity/create_item_params.dart`
+**File:** `lib/features/my_feature/domain/entity/create_item_params.dart`
 
 ```dart
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -213,12 +228,12 @@ The data layer implements **how** to fetch and manage data.
 
 ### **Step 4: Create Data Source Interface**
 
-**File:** `lib/features/brand/my_feature/data/data_source/my_feature_data_source.dart`
+**File:** `lib/features/my_feature/data/data_source/my_feature_data_source.dart`
 
 ```dart
 import 'package:flutter_tdd/core/http/models/result.dart';
-import 'package:flutter_tdd/features/brand/my_feature/data/models/item_model/item_model.dart';
-import 'package:flutter_tdd/features/brand/my_feature/domain/entity/create_item_params.dart';
+import 'package:flutter_tdd/features/my_feature/data/models/item_model/item_model.dart';
+import 'package:flutter_tdd/features/my_feature/domain/entity/create_item_params.dart';
 
 /// Data source interface for MyFeature
 abstract class MyFeatureDataSource {
@@ -232,16 +247,17 @@ abstract class MyFeatureDataSource {
 
 ### **Step 5: Implement Data Source**
 
-**File:** `lib/features/brand/my_feature/data/data_source/impl_my_feature_data_source.dart`
+**File:** `lib/features/my_feature/data/data_source/impl_my_feature_data_source.dart`
 
 ```dart
-import 'package:flutter_tdd/core/http/generic_http/brand_api_names.dart';
+import 'package:flutter_tdd/core/helpers/di.dart';
+import 'package:flutter_tdd/core/http/generic_http/api_names.dart';
 import 'package:flutter_tdd/core/http/generic_http/generic_http.dart';
 import 'package:flutter_tdd/core/http/models/http_request_model.dart';
 import 'package:flutter_tdd/core/http/models/result.dart';
-import 'package:flutter_tdd/features/brand/my_feature/data/data_source/my_feature_data_source.dart';
-import 'package:flutter_tdd/features/brand/my_feature/data/models/item_model/item_model.dart';
-import 'package:flutter_tdd/features/brand/my_feature/domain/entity/create_item_params.dart';
+import 'package:flutter_tdd/features/my_feature/data/data_source/my_feature_data_source.dart';
+import 'package:flutter_tdd/features/my_feature/data/models/item_model/item_model.dart';
+import 'package:flutter_tdd/features/my_feature/domain/entity/create_item_params.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: MyFeatureDataSource)
@@ -250,7 +266,7 @@ class ImplMyFeatureDataSource extends MyFeatureDataSource {
   @override
   Future<MyResult<List<ItemModel>>> getItems({int page = 1}) async {
     HttpRequestModel model = HttpRequestModel(
-      url: BrandApiNames.myFeatureItems, // Add to BrandApiNames
+      url: ApiNames.baseUrl + ApiNames.myFeatureItems, // Add to ApiNames
       requestMethod: RequestMethod.get,
       responseType: ResType.list,
       showLoader: false,
@@ -265,7 +281,7 @@ class ImplMyFeatureDataSource extends MyFeatureDataSource {
   @override
   Future<MyResult<ItemModel>> getItemById(int id) async {
     HttpRequestModel model = HttpRequestModel(
-      url: '${BrandApiNames.myFeatureItems}/$id',
+      url: '${ApiNames.myFeatureItems}/$id',
       requestMethod: RequestMethod.get,
       responseType: ResType.model,
       showLoader: true,
@@ -279,7 +295,7 @@ class ImplMyFeatureDataSource extends MyFeatureDataSource {
   @override
   Future<MyResult<bool>> createItem(CreateItemParams params) async {
     HttpRequestModel model = HttpRequestModel(
-      url: BrandApiNames.myFeatureItems,
+      url: ApiNames.myFeatureItems,
       requestMethod: RequestMethod.post,
       responseType: ResType.type,
       showLoader: true,
@@ -293,7 +309,7 @@ class ImplMyFeatureDataSource extends MyFeatureDataSource {
   @override
   Future<MyResult<bool>> updateItem(int id, CreateItemParams params) async {
     HttpRequestModel model = HttpRequestModel(
-      url: '${BrandApiNames.myFeatureItems}/$id',
+      url: '${ApiNames.myFeatureItems}/$id',
       requestMethod: RequestMethod.put,
       responseType: ResType.type,
       showLoader: true,
@@ -307,7 +323,7 @@ class ImplMyFeatureDataSource extends MyFeatureDataSource {
   @override
   Future<MyResult<bool>> deleteItem(int id) async {
     HttpRequestModel model = HttpRequestModel(
-      url: '${BrandApiNames.myFeatureItems}/$id',
+      url: '${ApiNames.myFeatureItems}/$id',
       requestMethod: RequestMethod.delete,
       responseType: ResType.type,
       showLoader: true,
@@ -328,7 +344,7 @@ class ImplMyFeatureDataSource extends MyFeatureDataSource {
 
 ### **Step 6: Create Data Models**
 
-**File:** `lib/features/brand/my_feature/data/models/item_model/item_model.dart`
+**File:** `lib/features/my_feature/data/models/item_model/item_model.dart`
 
 ```dart
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -384,7 +400,7 @@ flutter pub run build_runner build --delete-conflicting-outputs
 
 ### **Step 7: Implement Repository**
 
-**File:** `lib/features/brand/my_feature/data/repositories/impl_my_feature_repository.dart`
+**File:** `lib/features/my_feature/data/repositories/impl_my_feature_repository.dart`
 
 ```dart
 import 'package:flutter_tdd/core/helpers/di.dart';
@@ -442,7 +458,7 @@ The presentation layer handles UI and user interactions.
 
 #### **8.1: Create Imports File**
 
-**File:** `lib/features/brand/my_feature/presentation/pages/item_list/item_list_imports.dart`
+**File:** `lib/features/my_feature/presentation/pages/item_list/item_list_imports.dart`
 
 ```dart
 import 'package:auto_route/auto_route.dart';
@@ -473,7 +489,7 @@ part 'item_list_controller.dart';
 
 #### **8.2: Create Controller**
 
-**File:** `lib/features/brand/my_feature/presentation/pages/item_list/item_list_controller.dart` (part of imports)
+**File:** `lib/features/my_feature/presentation/pages/item_list/item_list_controller.dart` (part of imports)
 
 ```dart
 part of 'item_list_imports.dart';
@@ -642,7 +658,7 @@ class ItemListController {
 
 #### **8.3: Create Page Widget**
 
-**File:** `lib/features/brand/my_feature/presentation/pages/item_list/item_list.dart` (part of imports)
+**File:** `lib/features/my_feature/presentation/pages/item_list/item_list.dart` (part of imports)
 
 ```dart
 part of 'item_list_imports.dart';
@@ -830,7 +846,7 @@ If any section has more than 15 lines, extract it as a widget.
 
 #### **9.1: Create Widgets Import File**
 
-**File:** `lib/features/brand/my_feature/presentation/pages/item_list/widgets/item_list_widgets_imports.dart`
+**File:** `lib/features/my_feature/presentation/pages/item_list/widgets/item_list_widgets_imports.dart`
 
 ```dart
 import 'package:flutter/material.dart';
@@ -840,7 +856,7 @@ import 'package:flutter_tdd/core/constants/gaps.dart';
 import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
 import 'package:flutter_tdd/core/theme/text/app_text_style.dart';
 import 'package:flutter_tdd/core/widgets/CachedImage.dart';
-import 'package:flutter_tdd/features/brand/my_feature/data/models/item_model/item_model.dart';
+import 'package:flutter_tdd/features/my_feature/data/models/item_model/item_model.dart';
 
 part 'item_card_widget.dart';
 part 'item_filter_widget.dart';
@@ -848,7 +864,7 @@ part 'item_filter_widget.dart';
 
 #### **9.2: Create Widget Files**
 
-**File:** `lib/features/brand/my_feature/presentation/pages/item_list/widgets/item_card_widget.dart`
+**File:** `lib/features/my_feature/presentation/pages/item_list/widgets/item_card_widget.dart`
 
 ```dart
 part of 'item_list_widgets_imports.dart';
@@ -948,10 +964,13 @@ class ItemCardWidget extends StatelessWidget {
 
 ### **Step 10: Add API Endpoints**
 
-**File:** `lib/core/http/generic_http/brand_api_names.dart`
+**File:** `lib/core/http/generic_http/api_names.dart`
 
 ```dart
-class BrandApiNames {
+class ApiNames {
+  // Base URL
+  static const String baseUrl = 'https://api.example.com';
+  
   // ... existing endpoints ...
   
   // MyFeature endpoints
@@ -959,6 +978,8 @@ class BrandApiNames {
   static const String myFeatureCategories = '/api/v1/my-feature/categories';
 }
 ```
+
+**Note:** Always use `ApiNames.baseUrl + ApiNames.endpoint` in your data source implementations.
 
 ### **Step 11: Register Dependencies**
 
@@ -984,7 +1005,7 @@ gh.registerFactory<MyFeatureRepository>(() => ImplMyFeatureRepository());
 
 ### **Step 12: Create Routes File**
 
-**File:** `lib/features/brand/my_feature/presentation/manager/routes/my_feature_routes.dart`
+**File:** `lib/features/my_feature/presentation/manager/routes/my_feature_routes.dart`
 
 ```dart
 import 'package:auto_route/auto_route.dart';
@@ -1156,18 +1177,20 @@ Let's create a complete feature for managing product reviews.
 #### **1. Create Structure**
 
 ```bash
-mkdir -p lib/features/brand/reviews/{data,domain,presentation}
-mkdir -p lib/features/brand/reviews/data/{data_source,repositories,models}
-mkdir -p lib/features/brand/reviews/domain/{entity,repositories}
-mkdir -p lib/features/brand/reviews/presentation/{pages,widgets,manager/routes}
-mkdir -p lib/features/brand/reviews/presentation/pages/review_list/widgets
+cd lib/features
+
+mkdir -p reviews/{data,domain,presentation}
+mkdir -p reviews/data/{data_source,repositories,models}
+mkdir -p reviews/domain/{entity,repositories}
+mkdir -p reviews/presentation/{pages,widgets,manager/routes}
+mkdir -p reviews/presentation/pages/review_list
 ```
 
 #### **2. Domain Layer**
 
 **Repository Interface:**
 ```dart
-// lib/features/brand/reviews/domain/repositories/review_repository.dart
+// lib/features/reviews/domain/repositories/review_repository.dart
 abstract class ReviewRepository {
   Future<MyResult<List<ReviewModel>>> getReviews({int productId, int page = 1});
   Future<MyResult<bool>> submitReview(SubmitReviewParams params);
@@ -1177,7 +1200,7 @@ abstract class ReviewRepository {
 
 **Parameters:**
 ```dart
-// lib/features/brand/reviews/domain/entity/submit_review_params.dart
+// lib/features/reviews/domain/entity/submit_review_params.dart
 @freezed
 class SubmitReviewParams with _$SubmitReviewParams {
   factory SubmitReviewParams({
@@ -1196,7 +1219,7 @@ class SubmitReviewParams with _$SubmitReviewParams {
 
 **Model:**
 ```dart
-// lib/features/brand/reviews/data/models/review_model/review_model.dart
+// lib/features/reviews/data/models/review_model/review_model.dart
 @freezed
 class ReviewModel with _$ReviewModel {
   factory ReviewModel({
@@ -1215,13 +1238,13 @@ class ReviewModel with _$ReviewModel {
 
 **Data Source:**
 ```dart
-// lib/features/brand/reviews/data/data_source/impl_review_data_source.dart
+// lib/features/reviews/data/data_source/impl_review_data_source.dart
 @Injectable(as: ReviewDataSource)
 class ImplReviewDataSource extends ReviewDataSource {
   @override
   Future<MyResult<List<ReviewModel>>> getReviews({int? productId, int page = 1}) async {
     HttpRequestModel model = HttpRequestModel(
-      url: BrandApiNames.reviews,
+      url: ApiNames.reviews,
       requestMethod: RequestMethod.get,
       responseType: ResType.list,
       queryParameters: {
@@ -1238,7 +1261,7 @@ class ImplReviewDataSource extends ReviewDataSource {
 
 **Repository:**
 ```dart
-// lib/features/brand/reviews/data/repositories/impl_review_repository.dart
+// lib/features/reviews/data/repositories/impl_review_repository.dart
 @Injectable(as: ReviewRepository)
 class ImplReviewRepository extends ReviewRepository {
   final dataSource = getIt.get<ReviewDataSource>();
@@ -1254,7 +1277,7 @@ class ImplReviewRepository extends ReviewRepository {
 
 **Controller:**
 ```dart
-// lib/features/brand/reviews/presentation/pages/review_list/review_list_controller.dart
+// lib/features/reviews/presentation/pages/review_list/review_list_controller.dart
 class ReviewListController {
   final BaseBloc<List<ReviewModel>> reviewsBloc = BaseBloc<List<ReviewModel>>();
   final RefreshController refreshController = RefreshController();
@@ -1286,7 +1309,7 @@ class ReviewListController {
 
 **Page:**
 ```dart
-// lib/features/brand/reviews/presentation/pages/review_list/review_list.dart
+// lib/features/reviews/presentation/pages/review_list/review_list.dart
 @RoutePage(name: "ReviewListPageRoute")
 class ReviewListPage extends StatefulWidget {
   final int productId;

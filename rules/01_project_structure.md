@@ -200,38 +200,36 @@ lib/features/{feature_name}/
 lib/features/auth/
 ├── data/
 │   ├── data_source/
-│   │   └── auth_data_source.dart
+│   │   ├── auth_data_source.dart          # Abstract data source
+│   │   └── impl_auth_data_source.dart     # Implementation with API calls
 │   ├── repositories/
-│   │   └── impl_auth_repository.dart
-│   └── models/
-│       ├── login_model.dart
-│       └── user_response.dart
+│   │   └── impl_auth_repository.dart      # Repository implementation
+│   └── models/                             # Empty (using entity for params)
 │
 ├── domain/
 │   ├── entity/
-│   │   └── user_entity.dart
+│   │   └── login_params.dart               # Login parameters
 │   ├── repositories/
-│   │   └── auth_repository.dart
-│   └── models/
-│       ├── login_params.dart
-│       └── signup_params.dart
+│   │   └── auth_repository.dart            # Repository interface
+│   └── enums/                              # Empty (for future enums)
 │
 └── presentation/
     ├── pages/
-    │   ├── login/
-    │   │   ├── login_page.dart
-    │   │   ├── login_controller.dart
-    │   │   └── widgets/
-    │   │       ├── login_form_widget.dart
-    │   │       └── social_login_widget.dart
+    │   ├── splash/
+    │   │   ├── splash_imports.dart         # All imports
+    │   │   ├── splash_page.dart            # Splash page (part of imports)
+    │   │   ├── splash_controller.dart      # Splash controller (part of imports)
+    │   │   └── widgets/                    # Empty (for future widgets)
     │   │
-    │   └── signup/
-    │       ├── signup_page.dart
-    │       └── signup_controller.dart
+    │   └── login/
+    │       ├── login_imports.dart          # All imports
+    │       ├── login_page.dart             # Login page (part of imports)
+    │       └── login_controller.dart       # Login controller (part of imports)
     │
+    ├── widgets/                             # Shared auth widgets (empty)
     └── manager/
-        ├── auth_cubit.dart
-        └── auth_state.dart
+        └── routes/
+            └── auth_routes.dart            # Route definitions
 ```
 
 ---
@@ -240,23 +238,16 @@ lib/features/auth/
 
 ```
 assets/
-├── brand/                   # Brand-specific assets
-│   └── images/
-│       ├── logos/
-│       ├── icons/
-│       └── illustrations/
+├── fonts/                   # Custom fonts (currently commented out in pubspec)
+│   └── (empty)             # Fonts will be added when needed
 │
-├── fonts/                   # Custom fonts
-│   ├── sf_text/            # SF Pro Text family
-│   ├── SF-Arabic.ttf       # Arabic font
-│   ├── SF-Pro.ttf          # English font
-│   └── SaudiRiyalFont.ttf  # Currency font
-│
-└── images/                  # Global images and icons
-    ├── icons/              # SVG/PNG icons
-    ├── illustrations/      # Illustrations
-    └── backgrounds/        # Background images
+└── images/                  # Global images and icons (670+ files)
+    ├── *.svg               # SVG icons and illustrations
+    ├── *.png               # PNG images and logos
+    └── *.jpg               # JPG images
 ```
+
+**Note:** Custom fonts are currently disabled. The app uses system default fonts.
 
 ### **Asset Naming Conventions**
 

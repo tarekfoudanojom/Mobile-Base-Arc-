@@ -37,13 +37,15 @@ State Management
 
 ```
 Global State
-    ├── DeviceCubit       # App-wide settings (theme, locale, network)
-    ├── AuthCubit         # Authentication state
-    ├── UserCubit         # User data
-    ├── ProfileCubit      # Profile data
-    ├── CountriesCubit    # Countries/cities data
-    └── ServiceFilterCubit # Filter selections
+    └── DeviceCubit       # App-wide settings (theme, locale, network)
+    
+Add more global cubits only when needed app-wide:
+    ├── CountriesCubit    # Countries/cities data (optional)
+    ├── NotificationsCubit # Notification settings (optional)
+    └── SettingsCubit     # App settings (optional)
 ```
+
+**Note:** Currently only `DeviceCubit` is registered globally. Add more global cubits only when truly needed app-wide. Prefer feature-specific BaseBloc/ObsValue for most state.
 
 ---
 
@@ -1793,12 +1795,10 @@ class PersistentController {
 
 ### **Global Cubits**
 
-✅ **DeviceCubit**: Theme, locale, network, auth
-✅ **CountriesCubit**: Countries and cities
-✅ **ServiceFilterCubit**: Filter selections
-✅ **AuthCubit**: Authentication
-✅ **UserCubit**: User data
-✅ **ProfileCubit**: Profile data
+✅ **DeviceCubit**: Theme, locale, network status
+✅ **(Add more as your app grows)**: Examples include CountriesCubit, NotificationsCubit, SettingsCubit
+
+**Best Practice:** Keep global state minimal. Prefer feature-specific BaseBloc/ObsValue for most state management.
 
 ### **When to Use What**
 

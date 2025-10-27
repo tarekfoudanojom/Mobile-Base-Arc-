@@ -278,40 +278,17 @@ class GeneralProviders {
       create: (context) => DeviceCubit(),
     ),
     
-    // User authentication state
-    BlocProvider<AuthCubit>(
-      create: (context) => AuthCubit(),
-    ),
-    
-    // User data
-    BlocProvider<UserCubit>(
-      create: (context) => UserCubit(),
-    ),
-    
-    // User profile
-    BlocProvider<ProfileCubit>(
-      create: (context) => ProfileCubit(),
-    ),
-    
-    // Countries data
-    BlocProvider<CountriesCubit>(
-      create: (context) => CountriesCubit(),
-    ),
-    
-    // Service filters
-    BlocProvider<ServiceFilterCubit>(
-      create: (context) => ServiceFilterCubit(),
-    ),
+    // Add more global cubits here as needed
+    // Example: CountriesCubit, NotificationsCubit, etc.
   ];
 }
 ```
 
 **Usage:**
 ```dart
-// Access anywhere in the app
+// Access DeviceCubit anywhere in the app
 context.read<DeviceCubit>().updateLanguage(Locale('ar'));
-context.read<AuthCubit>().login();
-context.read<UserCubit>().updateProfile(user);
+context.read<DeviceCubit>().toggleTheme();
 ```
 
 ---
@@ -836,30 +813,16 @@ context.read<DeviceCubit>().updateUserAuth(true);
 
 ---
 
-### **AuthCubit - Authentication State**
+### **Additional Global Cubits**
 
-**Manages:**
-- Login/logout state
-- Token management
-- Session handling
+Add more global cubits as your app grows:
 
----
+**Examples:**
+- `CountriesCubit` - Countries and cities data
+- `NotificationsCubit` - Notification preferences
+- `SettingsCubit` - App settings
 
-### **UserCubit - User Data State**
-
-**Manages:**
-- Current user information
-- Profile updates
-- User preferences
-
----
-
-### **ProfileCubit - Profile State**
-
-**Manages:**
-- Profile completion status
-- Profile data
-- Verification status
+**Note:** Keep global state minimal. Prefer feature-specific state management with BaseBloc/ObsValue.
 
 ---
 
