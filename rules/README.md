@@ -229,6 +229,25 @@ Complete guide on creating models using Freezed and JSON serialization.
 
 ---
 
+#### **[12. Assets Usage Guide](12_assets_usage_guide.md)** (~1,700 lines)
+Complete guide on using and managing assets (images, SVGs, fonts, icons).
+
+**Covers:**
+- ✅ Asset structure overview (671+ files)
+- ✅ Asset types (SVG, PNG, JPG, fonts)
+- ✅ Generated asset references (Res.dart, BrandRes.dart)
+- ✅ Using images (Image.asset, ImageWidget)
+- ✅ Using SVG assets (SvgPicture.asset, color customization)
+- ✅ Using fonts (AppTextStyle integration)
+- ✅ Cached network images (CachedImage widget)
+- ✅ Adding new assets workflow
+- ✅ Asset optimization techniques
+- ✅ Best practices and common patterns
+
+**Reference this** when working with images, icons, or fonts.
+
+---
+
 ## 🎯 **Quick Start Guide**
 
 ### **For New Developers:**
@@ -259,11 +278,12 @@ Use as **quick reference** for:
 ## 📊 **Documentation Statistics**
 
 ```
-Total Guides: 11
-Total Lines: ~15,600
-Total Examples: 250+
+Total Guides: 12
+Total Lines: ~17,300
+Total Examples: 280+
 Widgets Documented: 70+
 Helpers Documented: 40+
+Assets Documented: 671+ files (SVG, PNG, JPG, fonts)
 Text Styles: 100+
 Colors: 100+
 App Layers: 12
@@ -272,8 +292,8 @@ State Patterns: 2 (BaseBloc + ObsValue)
 Model Patterns: 3 (@freezed, @unfreezed, regular)
 Validators: 15+
 API Patterns: 10+
-Usage Examples: 70+
-Code Templates: 35+
+Usage Examples: 80+
+Code Templates: 40+
 ```
 
 ---
@@ -480,7 +500,8 @@ AppSnackBar.showSuccessSnackBar(message)
 | 09 - Notifications | ~1,600 | 14 | 15+ |
 | 10 - Environments | ~1,600 | 10 | 20+ |
 | 11 - Models | ~1,800 | 12 | 25+ |
-| **Total** | **~15,600** | **130** | **260+** |
+| 12 - Assets | ~1,700 | 10 | 20+ |
+| **Total** | **~17,300** | **140** | **280+** |
 
 ---
 
