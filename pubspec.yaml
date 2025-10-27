@@ -181,8 +181,6 @@ dependencies:
 
 dependency_overrides:
   intl: 0.18.0
-  stream_video_push_notification:
-    path: third_party/stream_video_push_notification
   value_layout_builder: ^0.5.0
   record_ios: ^1.1.0
 
