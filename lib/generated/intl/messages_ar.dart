@@ -970,6 +970,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تجربة استثنائية"),
         "exclusive": MessageLookupByLibrary.simpleMessage("عقد حصري"),
         "expiry_date": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
+        "explore": MessageLookupByLibrary.simpleMessage("استكشف"),
         "exploreCampaigns":
             MessageLookupByLibrary.simpleMessage("استكشف حملاتك هنا"),
         "explore_campaigns":
@@ -2829,6 +2830,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "week": MessageLookupByLibrary.simpleMessage("أسبوع"),
         "welcome": MessageLookupByLibrary.simpleMessage("مرحباً"),
         "welcome_back": MessageLookupByLibrary.simpleMessage("مرحبًا بعودتك"),
+        "welcome_message":
+            MessageLookupByLibrary.simpleMessage("مرحبًا بك في نجوم"),
         "whats_app": MessageLookupByLibrary.simpleMessage("واتساب"),
         "when_add_influencer_it_will_appear_here":
             MessageLookupByLibrary.simpleMessage(

@@ -18462,6 +18462,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Explore`
+  String get explore {
+    return Intl.message(
+      'Explore',
+      name: 'explore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Welcome to Nojom`
+  String get welcome_message {
+    return Intl.message(
+      'Welcome to Nojom',
+      name: 'welcome_message',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

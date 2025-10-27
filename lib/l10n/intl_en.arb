@@ -1949,5 +1949,7 @@
   "migrate_to_nogom_title": "We've Moved to Nojom App!",
   "migrate_to_nogom_description": "The Brand app has been merged with the Nojom app for a unified experience that brings companies and influencers together in one place.\nYou can continue using your current account and all your data through the Nojom app.",
   "migrate_to_nogom_button": "Go to Nojom App",
-  "migrate_to_nogom_subtitle": "Your data is safe, continue with the same account in Nojom app."
+  "migrate_to_nogom_subtitle": "Your data is safe, continue with the same account in Nojom app.",
+  "explore": "Explore",
+  "welcome_message": "Welcome to Nojom"
 }

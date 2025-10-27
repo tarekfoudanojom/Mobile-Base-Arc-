@@ -18,7 +18,8 @@ class ImplAuthDataSource implements AuthDataSource {
       requestBody: params.toJson(),
     );
 
-    return await getIt<GenericHttpImpl<String>>()(model);
+    // return await getIt<GenericHttpImpl<String>>()(model);
+    return const MyResult.isSuccess("Mocked login successful" );
   }
 }
 

@@ -39,7 +39,7 @@ class LoginController {
         isSuccess: (data) {
           loginBloc.successState(data);
           AppSnackBar.showSuccessSnackBar('Login successful');
-          // TODO: Navigate to next page
+          context.router.replace(const HomeRoute());
         },
         isError: (error) {
           loginBloc.failedState(error, () => login(context));

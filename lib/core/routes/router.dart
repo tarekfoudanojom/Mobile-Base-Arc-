@@ -5,6 +5,7 @@ class AppRouter extends $AppRouter {
   @override
   final List<AutoRoute> routes = [
     ...authRoutes,
+    ...baseRoutes,
   ];
 }
 

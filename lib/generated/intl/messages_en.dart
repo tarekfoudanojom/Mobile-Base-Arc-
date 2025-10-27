@@ -999,6 +999,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Exceptional Experience"),
         "exclusive": MessageLookupByLibrary.simpleMessage("Exclusive"),
         "expiry_date": MessageLookupByLibrary.simpleMessage("Expiry date"),
+        "explore": MessageLookupByLibrary.simpleMessage("Explore"),
         "exploreCampaigns":
             MessageLookupByLibrary.simpleMessage("Explore your campaigns here"),
         "explore_campaigns":
@@ -2887,6 +2888,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "week": MessageLookupByLibrary.simpleMessage("Week"),
         "welcome": MessageLookupByLibrary.simpleMessage("Welcome"),
         "welcome_back": MessageLookupByLibrary.simpleMessage("Welcome Back"),
+        "welcome_message":
+            MessageLookupByLibrary.simpleMessage("Welcome to Nojom"),
         "whats_app": MessageLookupByLibrary.simpleMessage("WhatsApp"),
         "when_add_influencer_it_will_appear_here":
             MessageLookupByLibrary.simpleMessage(
