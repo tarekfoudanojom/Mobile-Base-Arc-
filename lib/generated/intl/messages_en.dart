@@ -1660,8 +1660,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_for_viewing_services": MessageLookupByLibrary.simpleMessage(
             "To browse all available Star services and choose the best fit for your ad campaigns, log into your account."),
         "login_message": MessageLookupByLibrary.simpleMessage("Log In"),
+        "login_or_create_account":
+            MessageLookupByLibrary.simpleMessage("Login or Create Account"),
         "login_or_register": MessageLookupByLibrary.simpleMessage(
             "Log in or create an account now to create and manage campaigns, request services, connect with influencers, and more..."),
+        "login_subtitle": MessageLookupByLibrary.simpleMessage(
+            "Enter your phone number to continue"),
         "login_to_access_campaigns": MessageLookupByLibrary.simpleMessage(
             "Log in to Access Your Campaigns"),
         "login_to_access_chats": MessageLookupByLibrary.simpleMessage(

@@ -32,70 +32,70 @@ class CustomInputDecoration extends InputDecoration {
   final TextStyle? errorTextStyle;
   const CustomInputDecoration(
       {required this.lang,
-      this.hintString,
-      this.labelAlignment,
-      this.labelTxt,
-      this.labelWidget,
-      this.prefIcon,
-      this.sufIcon,
-      this.hintColor,
-      this.customFillColor,
-      this.enableColor,
-      this.focsColor,
-      this.borderRadius,
-      this.hintTextStyle,
-      this.suffixWidget,
-      this.padding,
-      this.enableBorder,
-      this.focusBorder,
-      this.labelColor,
-      this.labelTextStyle,
-      this.borderWidth,
-      this.suffixIconConstraintsValue,
-      this.prefixIconConstraint,
-      this.helperString,
-      this.helperTextStyle,
-      this.helperTextMaxLines,
-      this.internalErrorBorder,
-      this.errorTextStyle})
+        this.hintString,
+        this.labelAlignment,
+        this.labelTxt,
+        this.labelWidget,
+        this.prefIcon,
+        this.sufIcon,
+        this.hintColor,
+        this.customFillColor,
+        this.enableColor,
+        this.focsColor,
+        this.borderRadius,
+        this.hintTextStyle,
+        this.suffixWidget,
+        this.padding,
+        this.enableBorder,
+        this.focusBorder,
+        this.labelColor,
+        this.labelTextStyle,
+        this.borderWidth,
+        this.suffixIconConstraintsValue,
+        this.prefixIconConstraint,
+        this.helperString,
+        this.helperTextStyle,
+        this.helperTextMaxLines,
+        this.internalErrorBorder,
+        this.errorTextStyle})
       : super();
 
   @override
   InputBorder get enabledBorder =>
       enableBorder ??
-      UnderlineInputBorder(
-        borderSide:
+          UnderlineInputBorder(
+            borderSide:
             BorderSide(color: enableColor ?? Colors.transparent, width: .6),
-        borderRadius: borderRadius ?? BorderRadius.circular(10),
-      );
+            borderRadius: borderRadius ?? BorderRadius.circular(10),
+          );
 
   @override
   InputBorder get focusedBorder =>
       focusBorder ??
-      UnderlineInputBorder(
-          borderRadius: borderRadius ?? BorderRadius.circular(10),
-          borderSide: BorderSide(
-              color: focusColor ?? AppColors.noContextInstance.greyWhite,
-              width: borderWidth ?? 1));
+          UnderlineInputBorder(
+              borderRadius: borderRadius ?? BorderRadius.circular(10),
+              borderSide: BorderSide(
+                  color: focusColor ?? AppColors.noContextInstance.greyWhite,
+                  width: borderWidth ?? 1));
 
   @override
   InputBorder get errorBorder =>
       internalErrorBorder ??
-      UnderlineInputBorder(
-          borderSide: const BorderSide(color: Colors.red, width: .5),
-          borderRadius: borderRadius ?? BorderRadius.circular(10));
+          UnderlineInputBorder(
+              borderSide: const BorderSide(color: Colors.red, width: .5),
+              borderRadius: borderRadius ?? BorderRadius.circular(10));
 
   @override
   InputBorder get focusedErrorBorder =>
       internalErrorBorder ??
-      UnderlineInputBorder(
-          borderRadius: borderRadius ?? BorderRadius.circular(10),
-          borderSide: const BorderSide(color: Colors.red, width: 1));
+          UnderlineInputBorder(
+              borderRadius: borderRadius ?? BorderRadius.circular(10),
+              borderSide: const BorderSide(color: Colors.red, width: 1));
 
   @override
   TextStyle get errorStyle =>
       errorTextStyle ??
-      AppTextStyle.s12_w400(color: AppColors.snackBarRedError);
+          AppTextStyle.s12_w400(color: AppColors.snackBarRedError);
 
   @override
   String? get hintText => hintString;
@@ -106,27 +106,27 @@ class CustomInputDecoration extends InputDecoration {
   @override
   Widget? get label =>
       labelWidget ??
-      (labelTxt == null
-          ? super.label
-          : Align(
-              alignment: labelAlignment ?? Alignment.centerLeft,
-              child: Text(
-                labelTxt ?? "",
-                style: labelStyle,
-              ),
-            ));
+          (labelTxt == null
+              ? super.label
+              : Align(
+            alignment: labelAlignment ?? Alignment.centerLeft,
+            child: Text(
+              labelTxt ?? "",
+              style: labelStyle,
+            ),
+          ));
 
   @override
   TextStyle get labelStyle =>
       labelTextStyle ??
-      AppTextStyle.s16_w400(
-          color: labelColor ?? AppColors.noContextInstance.hintGaryColor);
+          AppTextStyle.s16_w400(
+              color: labelColor ?? AppColors.noContextInstance.hintGaryColor);
 
   @override
   TextStyle? get hintStyle =>
       hintTextStyle ??
-      AppTextStyle.s16_w400(
-          color: hintColor ?? AppColors.noContextInstance.hintGaryColor);
+          AppTextStyle.s16_w400(
+              color: hintColor ?? AppColors.noContextInstance.hintGaryColor);
 
   @override
   EdgeInsetsGeometry get contentPadding =>

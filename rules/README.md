@@ -248,6 +248,23 @@ Complete guide on using and managing assets (images, SVGs, fonts, icons).
 
 ---
 
+#### **[13. Loading & SnackBar Services Guide](13_loading_and_snackbar_guide.md)** (~1,000 lines)
+Complete guide on using LoadingHelper and AppSnackBar for loading states and notifications.
+
+**Covers:**
+- ✅ LoadingHelper service (show/dismiss loading dialogs)
+- ✅ Loading with progress tracking
+- ✅ AppSnackBar types (success, error, warning, toast)
+- ✅ Undo snackbars for reversible actions
+- ✅ Campaign success snackbars with actions
+- ✅ Common patterns (API requests, form submission, delete with undo)
+- ✅ Best practices and error handling
+- ✅ Complete examples with proper usage
+
+**Reference this** when implementing loading states or user notifications.
+
+---
+
 ## 🎯 **Quick Start Guide**
 
 ### **For New Developers:**
@@ -278,11 +295,11 @@ Use as **quick reference** for:
 ## 📊 **Documentation Statistics**
 
 ```
-Total Guides: 12
-Total Lines: ~17,300
-Total Examples: 280+
+Total Guides: 13
+Total Lines: ~18,300
+Total Examples: 290+
 Widgets Documented: 70+
-Helpers Documented: 40+
+Helpers Documented: 42+ (LoadingHelper, AppSnackBar)
 Assets Documented: 671+ files (SVG, PNG, JPG, fonts)
 Text Styles: 100+
 Colors: 100+
@@ -292,8 +309,9 @@ State Patterns: 2 (BaseBloc + ObsValue)
 Model Patterns: 3 (@freezed, @unfreezed, regular)
 Validators: 15+
 API Patterns: 10+
-Usage Examples: 80+
-Code Templates: 40+
+Usage Examples: 85+
+Code Templates: 45+
+SnackBar Types: 7
 ```
 
 ---
@@ -355,7 +373,9 @@ Complete understanding:
 | Find widget | 05 | Widget categories |
 | Validate email | 06 | Validator helpers |
 | Pick image | 06 | File services |
-| Show message | 06 | AppSnackBar |
+| Show loading | 13 | LoadingHelper service |
+| Show message | 13 | AppSnackBar methods |
+| Undo action | 13 | Undo snackbar |
 | Manage state | 08 | BaseBloc vs ObsValue |
 | Handle loading | 08 | BaseBloc pattern |
 | Send notification | 09 | Showing notifications |
@@ -501,7 +521,8 @@ AppSnackBar.showSuccessSnackBar(message)
 | 10 - Environments | ~1,600 | 10 | 20+ |
 | 11 - Models | ~1,800 | 12 | 25+ |
 | 12 - Assets | ~1,700 | 10 | 20+ |
-| **Total** | **~17,300** | **140** | **280+** |
+| 13 - Loading/SnackBar | ~1,000 | 7 | 10+ |
+| **Total** | **~18,300** | **147** | **290+** |
 
 ---
 

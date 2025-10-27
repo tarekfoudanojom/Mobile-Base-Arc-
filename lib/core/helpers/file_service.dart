@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 import 'dart:math';
 import 'package:file_picker/file_picker.dart';
@@ -11,7 +10,6 @@ import 'package:flutter_tdd/core/helpers/app_snack_bar_service.dart';
 import 'package:flutter_tdd/core/helpers/di.dart';
 import 'package:flutter_tdd/core/helpers/loading_helper.dart';
 import 'package:flutter_tdd/core/helpers/psermission_services.inject.dart';
-import 'package:flutter_tdd/core/helpers/utilities.dart';
 import 'package:flutter_tdd/core/localization/translate.dart';
 import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
 import 'package:flutter_tdd/core/theme/text/app_text_style.dart';
@@ -252,10 +250,6 @@ class AppFileService {
     }
   }
 
-  Future<double> getFileSize(String filePath) async {
-    int size = await getIt<Utilities>().getFileSize(filePath) ?? 0;
-    return (size / (1024 * 1024));
-  }
 
   Future<File?> fileFromUrl(String imageUrl) async {
     final response = await http.get(Uri.parse(imageUrl));

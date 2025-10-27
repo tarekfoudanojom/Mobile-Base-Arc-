@@ -22,9 +22,7 @@ export 'package:flutter_tdd/core/helpers/validator.dart';
 export 'package:flutter_tdd/core/widgets/GenericTextField.dart';
 export 'package:flutter_tdd/core/widgets/LoadingButton.dart';
 export 'package:flutter_tdd/core/widgets/smart_button.dart';
-export 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
-export 'package:flutter_spinkit/flutter_spinkit.dart';
 
 export 'package:flutter_tdd/core/bloc/device_cubit/device_cubit.dart';
 
@@ -33,13 +31,11 @@ export 'package:flutter_tdd/core/constants/app_constants.dart';
 export 'package:flutter_tdd/core/extensions/double_helper_extension.dart';
 
 export 'package:flutter_tdd/core/helpers/file_service.dart';
-export 'package:flutter_tdd/core/helpers/utilities.dart';
 
 export 'package:flutter_tdd/core/requester/consumer/requester_consumer.dart';
 export 'package:flutter_tdd/core/routes/router_imports.gr.dart';
 
 export 'package:flutter_tdd/core/widgets/app_button.dart';
-export 'package:flutter_tdd/core/widgets/pdf_view_widget.dart';
 export 'package:flutter_tdd/core/widgets/custom_loading_button_widget.dart';
 export 'package:flutter_tdd/core/widgets/shimmers/base_shimmer_widget.dart';
 export 'package:flutter_tdd/core/widgets/shimmers/text_shimmer.dart';

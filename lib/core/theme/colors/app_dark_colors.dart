@@ -4,7 +4,7 @@ import 'package:flutter_tdd/core/theme/colors/app_colors.dart';
 
 class AppDarkColors extends AppColors {
   @override
-  Color get primary => const Color(0x993C3C43);
+  Color get primary => const Color(0xFF004eee);
 
   @override
   Color get secondary => const Color(0xff818181);

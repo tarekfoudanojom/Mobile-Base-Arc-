@@ -1611,8 +1611,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "login_for_viewing_services": MessageLookupByLibrary.simpleMessage(
             "لمشاهدة جميع خدمات المؤثرين المتاحة واختيار الأنسب لحملاتك الإعلانية، قم بتسجيل الدخول إلى حسابك."),
         "login_message": MessageLookupByLibrary.simpleMessage("تسجيل الدخول "),
+        "login_or_create_account":
+            MessageLookupByLibrary.simpleMessage("تسجيل الدخول أو إنشاء حساب"),
         "login_or_register": MessageLookupByLibrary.simpleMessage(
             "سجل الدخول أو أنشئ حسابًا الآن لإنشاء وإدارة الحملات، طلب الخدمات، والتواصل مع المؤثرين والمزيد..."),
+        "login_subtitle":
+            MessageLookupByLibrary.simpleMessage("أدخل رقم هاتفك للمتابعة"),
         "login_to_access_campaigns": MessageLookupByLibrary.simpleMessage(
             "سجّل الدخول للوصول الى حملاتك"),
         "login_to_access_chats": MessageLookupByLibrary.simpleMessage(

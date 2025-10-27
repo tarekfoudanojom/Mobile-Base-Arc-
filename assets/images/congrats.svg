@@ -1,0 +1,23 @@
+<svg width="227" height="200" viewBox="0 0 227 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="180.643" y="38.5715" width="12.8571" height="12.8571" rx="6.42857" fill="#1A62F5" fill-opacity="0.8"/>
+<rect x="52.0703" y="184.286" width="12.8571" height="12.8571" rx="6.42857" fill="#1A62F5" fill-opacity="0.8"/>
+<rect x="204.928" y="100" width="7.14286" height="7.14286" rx="3.57143" fill="#1A62F5" fill-opacity="0.8"/>
+<rect x="197.785" y="161.428" width="17.1429" height="17.1429" rx="8.57143" fill="#1A62F5" fill-opacity="0.8"/>
+<rect x="27.7852" y="152.857" width="8.57143" height="8.57143" rx="4.28571" fill="#1A62F5" fill-opacity="0.8"/>
+<rect x="147.785" width="8.57143" height="8.57143" rx="4.28571" fill="#1A62F5" fill-opacity="0.8"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M184.927 111.429C184.927 150.877 152.948 182.857 113.499 182.857C74.05 182.857 42.0703 150.877 42.0703 111.429C42.0703 71.9797 74.05 40 113.499 40C152.948 40 184.927 71.9797 184.927 111.429ZM142.287 89.7834C144.379 91.8755 144.379 95.2674 142.287 97.3595L106.573 133.074C104.481 135.166 101.089 135.166 98.9965 133.074L84.7108 118.788C82.6187 116.696 82.6187 113.304 84.7108 111.212C86.8029 109.12 90.1949 109.12 92.287 111.212L102.785 121.71L118.748 105.746L134.711 89.7834C136.803 87.6913 140.195 87.6913 142.287 89.7834Z" fill="url(#paint0_linear_7190_11148)"/>
+<rect x="17.7852" y="52.8572" width="17.1429" height="17.1429" rx="8.57143" fill="#1A62F5" fill-opacity="0.8"/>
+<rect x="90.6426" y="8.57153" width="17.1429" height="17.1429" rx="8.57143" fill="#1A62F5" fill-opacity="0.8"/>
+<rect x="0.642578" y="105.714" width="20" height="20" rx="10" fill="#1A62F5" fill-opacity="0.8"/>
+<rect x="34.9277" y="100" width="2.85714" height="2.85714" rx="1.42857" fill="#1A62F5" fill-opacity="0.8"/>
+<rect x="223.5" y="132.857" width="2.85714" height="2.85714" rx="1.42857" fill="#1A62F5" fill-opacity="0.8"/>
+<rect x="140.643" y="25.7144" width="2.85714" height="2.85714" rx="1.42857" fill="#1A62F5" fill-opacity="0.8"/>
+<rect x="150.643" y="197.143" width="2.85714" height="2.85714" rx="1.42857" fill="#1A62F5" fill-opacity="0.8"/>
+<defs>
+<linearGradient id="paint0_linear_7190_11148" x1="42.0703" y1="40" x2="185.057" y2="182.986" gradientUnits="userSpaceOnUse">
+<stop stop-color="#1E4AF3"/>
+<stop offset="0.5" stop-color="#5E28E6"/>
+<stop offset="1" stop-color="#AE00D8"/>
+</linearGradient>
+</defs>
+</svg>

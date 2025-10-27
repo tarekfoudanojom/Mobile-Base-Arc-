@@ -350,6 +350,96 @@ class S {
     );
   }
 
+  /// `Enter your phone number to continue`
+  String get login_subtitle {
+    return Intl.message(
+      'Enter your phone number to continue',
+      name: 'login_subtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Login or Create Account`
+  String get login_or_create_account {
+    return Intl.message(
+      'Login or Create Account',
+      name: 'login_or_create_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter with your phone number`
+  String get sign_up_with_phone_number {
+    return Intl.message(
+      'Enter with your phone number',
+      name: 'sign_up_with_phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in or create your account automatically now to create and manage campaigns, request services, communicate with influencers, and more...`
+  String get sign_in_or_create_account_now {
+    return Intl.message(
+      'Sign in or create your account automatically now to create and manage campaigns, request services, communicate with influencers, and more...',
+      name: 'sign_in_or_create_account_now',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number`
+  String get phone_number {
+    return Intl.message(
+      'Phone number',
+      name: 'phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid phone number.`
+  String get please_enter_valid_phone_number {
+    return Intl.message(
+      'Please enter a valid phone number.',
+      name: 'please_enter_valid_phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By clicking continue, you agree to`
+  String get by_clicking_continue_you_agree_to {
+    return Intl.message(
+      'By clicking continue, you agree to',
+      name: 'by_clicking_continue_you_agree_to',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms and Conditions and Privacy Policy`
+  String get terms_and_conditions_and_privacy_policy {
+    return Intl.message(
+      'Terms and Conditions and Privacy Policy',
+      name: 'terms_and_conditions_and_privacy_policy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get keep_going {
+    return Intl.message(
+      'Continue',
+      name: 'keep_going',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Register`
   String get label_register {
     return Intl.message(
@@ -4615,16 +4705,6 @@ class S {
     return Intl.message(
       'New email',
       name: 'new_email',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Continue`
-  String get keep_going {
-    return Intl.message(
-      'Continue',
-      name: 'keep_going',
       desc: '',
       args: [],
     );
@@ -12030,26 +12110,6 @@ class S {
     );
   }
 
-  /// `By clicking continue, you agree to`
-  String get by_clicking_continue_you_agree_to {
-    return Intl.message(
-      'By clicking continue, you agree to',
-      name: 'by_clicking_continue_you_agree_to',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Terms and Conditions and Privacy Policy`
-  String get terms_and_conditions_and_privacy_policy {
-    return Intl.message(
-      'Terms and Conditions and Privacy Policy',
-      name: 'terms_and_conditions_and_privacy_policy',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Sign in or create your account automatically now to create and manage campaigns, request services, communicate with stars, and more...`
   String
       get sign_in_or_create_account_now_to_create_and_manage_campaigns_request_services_communicate_with_stars_and_more {
@@ -12300,16 +12360,6 @@ class S {
     );
   }
 
-  /// `Phone number`
-  String get phone_number {
-    return Intl.message(
-      'Phone number',
-      name: 'phone_number',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Enter your phone number so we can verify your account. A verification code will be sent to this number.`
   String get enter_phone_number {
     return Intl.message(
@@ -12465,36 +12515,6 @@ class S {
     return Intl.message(
       'Resend code via WhatsApp',
       name: 'resend_code_via_whatsapp',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter a valid phone number.`
-  String get please_enter_valid_phone_number {
-    return Intl.message(
-      'Please enter a valid phone number.',
-      name: 'please_enter_valid_phone_number',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Enter with your phone number`
-  String get sign_up_with_phone_number {
-    return Intl.message(
-      'Enter with your phone number',
-      name: 'sign_up_with_phone_number',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Sign in or create your account automatically now to create and manage campaigns, request services, communicate with influencers, and more...`
-  String get sign_in_or_create_account_now {
-    return Intl.message(
-      'Sign in or create your account automatically now to create and manage campaigns, request services, communicate with influencers, and more...',
-      name: 'sign_in_or_create_account_now',
       desc: '',
       args: [],
     );

@@ -11,63 +11,63 @@ enum FieldTypes { normal, clickable, readonly, chat, password, rich, disable }
 class GenericTextField extends StatefulWidget {
   const GenericTextField(
       {super.key,
-      this.labelWidget,
-      this.label,
-      this.hint,
-      required this.fieldTypes,
-      this.controller,
-      this.focusNode,
-      this.margin,
-      this.autoFocus = false,
-      this.contentPadding,
-      this.inputFormatters,
-      required this.type,
-      this.onTap,
-      this.radius,
-      this.maxLines,
-      this.maxLength,
-      this.suffixWidget,
-      this.prefixWidget,
-      this.textColor,
-      this.fillColor,
-      this.hintColor,
-      this.cursorColor,
-      this.labelColor,
-      this.prefixIcon,
-      this.suffixIcon,
-      this.onChange,
-      this.textDirection,
-      this.labelAlignment,
-      this.fontFamily,
-      this.autoValidateMode,
-      this.onSubmit,
-      required this.action,
-      this.enableBorderColor,
-      this.focusBorderColor,
-      required this.validate,
-      this.hintTextStyle,
-      this.labelTextStyle,
-      this.inputStyle,
-      this.textAlign,
-      this.enableBorder,
-      this.focusBorder,
-      this.readOnly,
-      this.filledBorderColor,
-      this.prefixIconConstraint,
-      this.canRequestFocus,
-      this.borderWidth,
-      this.cursorHeight,
-      this.suffixIconConstraintsValue,
-      this.normalBorder = Colors.transparent,
-      this.helperText,
-      this.helperTextStyle,
-      this.errorBorder,
-      this.isAutoDetectUsernameFromUrl = false,
-      this.enableSuggestions = false,
-      this.autocorrect = false,
-      this.helperMaxLines,
-      this.addAstric = false,
-      this.selectAllOnFocus = true});
+        this.labelWidget,
+        this.label,
+        this.hint,
+        required this.fieldTypes,
+        this.controller,
+        this.focusNode,
+        this.margin,
+        this.autoFocus = false,
+        this.contentPadding,
+        this.inputFormatters,
+        required this.type,
+        this.onTap,
+        this.radius,
+        this.maxLines,
+        this.maxLength,
+        this.suffixWidget,
+        this.prefixWidget,
+        this.textColor,
+        this.fillColor,
+        this.hintColor,
+        this.cursorColor,
+        this.labelColor,
+        this.prefixIcon,
+        this.suffixIcon,
+        this.onChange,
+        this.textDirection,
+        this.labelAlignment,
+        this.fontFamily,
+        this.autoValidateMode,
+        this.onSubmit,
+        required this.action,
+        this.enableBorderColor,
+        this.focusBorderColor,
+        required this.validate,
+        this.hintTextStyle,
+        this.labelTextStyle,
+        this.inputStyle,
+        this.textAlign,
+        this.enableBorder,
+        this.focusBorder,
+        this.readOnly,
+        this.filledBorderColor,
+        this.prefixIconConstraint,
+        this.canRequestFocus,
+        this.borderWidth,
+        this.cursorHeight,
+        this.suffixIconConstraintsValue,
+        this.normalBorder = Colors.transparent,
+        this.helperText,
+        this.helperTextStyle,
+        this.errorBorder,
+        this.isAutoDetectUsernameFromUrl = false,
+        this.enableSuggestions = false,
+        this.autocorrect = false,
+        this.helperMaxLines,
+        this.addAstric = false,
+        this.selectAllOnFocus = true});
 
   final Widget? labelWidget;
   final TextEditingController? controller;
@@ -235,8 +235,8 @@ class _GenericTextFieldState extends State<GenericTextField> {
       decoration: BoxDecoration(
         border: Border.all(
           color: (widget.label == null
-                  ? widget.enableBorderColor
-                  : widget.enableBorder?.borderSide.color) ??
+              ? widget.enableBorderColor
+              : widget.enableBorder?.borderSide.color) ??
               _enableBorderColor,
           width: widget.enableBorder?.borderSide.width ?? 1,
         ),
@@ -274,14 +274,14 @@ class _GenericTextFieldState extends State<GenericTextField> {
       textDirection: widget.textDirection,
       enableInteractiveSelection: widget.selectAllOnFocus,
       autovalidateMode:
-          widget.autoValidateMode ?? AutovalidateMode.onUserInteraction,
+      widget.autoValidateMode ?? AutovalidateMode.onUserInteraction,
       inputFormatters: widget.inputFormatters ??
           [
             if (widget.maxLength != null)
               LengthLimitingTextInputFormatter(widget.maxLength)
           ],
       enabled: widget.fieldTypes != FieldTypes.disable,
-      maxLength: widget.maxLength,
+      // maxLength: widget.maxLength,
       autofillHints: widget.type == TextInputType.number
           ? null
           : _getAutoFillHints(widget.type),
@@ -290,8 +290,8 @@ class _GenericTextFieldState extends State<GenericTextField> {
       maxLines: widget.fieldTypes == FieldTypes.chat
           ? null
           : widget.fieldTypes == FieldTypes.rich
-              ? widget.maxLines
-              : 1,
+          ? widget.maxLines
+          : 1,
       obscureText: widget.fieldTypes == FieldTypes.password,
       readOnly: widget.readOnly ?? widget.fieldTypes == FieldTypes.readonly,
       onEditingComplete: widget.onSubmit,
@@ -313,42 +313,32 @@ class _GenericTextFieldState extends State<GenericTextField> {
       decoration: CustomInputDecoration(
           labelWidget: widget.addAstric == true
               ? Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: widget.label,
-                        style: const TextStyle(
-                          color: Color(0xFF535861),
-                          fontSize: 16,
-                          fontFamily: 'SFArabic',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                      const TextSpan(
-                        text: '*',
-                        style: TextStyle(
-                          color: Color(0xFF155DEE),
-                          fontSize: 16,
-                          fontFamily: 'SFArabic',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ],
-                  ),
-                  textAlign: TextAlign.right,
-                )
+            TextSpan(
+              children: [
+                TextSpan(
+                  text: widget.label,
+                  style:  AppTextStyle.s16_w400(color: widget.labelColor ?? context.colors.textTertiary),
+                ),
+                 TextSpan(
+                  text: '*',
+                  style: AppTextStyle.s16_w400(color: context.colors.appColorBlue),
+                ),
+              ],
+            ),
+            textAlign: TextAlign.right,
+          )
               : widget.labelWidget,
           labelTxt: widget.label,
           labelTextStyle: widget.labelTextStyle,
           hintString: widget.hint,
           labelAlignment:
-              widget.labelAlignment ?? AlignmentDirectional.centerStart,
+          widget.labelAlignment ?? AlignmentDirectional.centerStart,
           hintTextStyle: widget.hintTextStyle,
           prefIcon: widget.prefixIcon,
           sufIcon: widget.suffixIcon,
           enableColor: _enableBorderColor,
           focsColor: widget.focusBorderColor,
-          customFillColor: widget.fillColor ?? context.colors.inputFillColor,
+          customFillColor: widget.fillColor ?? context.colors.white,
           suffixWidget: widget.suffixWidget,
           padding: widget.contentPadding,
           hintColor: widget.hintColor,

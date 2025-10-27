@@ -7,9 +7,6 @@ import 'package:flutter_tdd/core/widgets/base_form_option/options_requester/opti
 import 'package:flutter_tdd/core/widgets/base_form_option/sheet/option_sheet_content.dart';
 import 'package:flutter_tdd/core/widgets/bottom_sheet_views/delete_bottom_sheet_widget.dart';
 import 'package:flutter_tdd/core/widgets/bottom_sheet_views/save_changes_bottom_sheet_widget.dart';
-import 'package:flutter_tdd/features/base/data/models/member_client_delegation_model/member_client_delegation_model.dart';
-import 'package:flutter_tdd/features/base/presentation/pages/login/sign_in_bottom_imports.dart';
-import 'package:flutter_tdd/features/base/presentation/pages/more/widgets/more_widgets_imports.dart';
 import 'package:get_it/get_it.dart';
 
 abstract class AppBottomSheets {
@@ -220,35 +217,7 @@ abstract class AppBottomSheets {
     );
   }
 
-  static Future<T> showMemberClientsBottomSheet<T>({
-    required BuildContext context,
-    required Function(MemberClientDelegationModel) onAccountSelected,
-  }) async {
-    return await showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      barrierColor: Colors.black.withValues(alpha: 0.5),
-      builder: (context) => BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
-        child: ClientAccountsBottomSheetWidget(
-          onAccountSelected: onAccountSelected,
-        ),
-      ),
-    );
-  }
 
-
-  static void showSignInSheet(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      useRootNavigator: true,
-      builder: (context) {
-        return const SignInBottomSheet();
-      },
-    );
-  }
 
 
 }
