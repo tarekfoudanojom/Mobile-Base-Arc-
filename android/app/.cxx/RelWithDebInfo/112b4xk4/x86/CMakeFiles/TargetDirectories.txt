@@ -1,2 +1,0 @@
-/Volumes/Data/Nojom/brand_nojom/android/app/.cxx/RelWithDebInfo/112b4xk4/x86/CMakeFiles/edit_cache.dir
-/Volumes/Data/Nojom/brand_nojom/android/app/.cxx/RelWithDebInfo/112b4xk4/x86/CMakeFiles/rebuild_cache.dir
