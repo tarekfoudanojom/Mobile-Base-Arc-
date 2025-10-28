@@ -7,5 +7,9 @@ final baseRoutes = [
     page: HomeRoute.page,
     path: '/home',
   ),
+  AutoRoute(
+    page: OrderDetailsRoute.page,
+    path: '/orders/details/:orderId',
+  ),
 ];
 

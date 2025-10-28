@@ -40,6 +40,14 @@ import 'package:flutter_tdd/features/auth/data/repositories/impl_auth_repository
     as _i76;
 import 'package:flutter_tdd/features/auth/domain/repositories/auth_repository.dart'
     as _i928;
+import 'package:flutter_tdd/features/orders/data/data_source/impl_order_data_source.dart'
+    as _i372;
+import 'package:flutter_tdd/features/orders/data/data_source/order_data_source.dart'
+    as _i1068;
+import 'package:flutter_tdd/features/orders/data/repositories/impl_order_repository.dart'
+    as _i860;
+import 'package:flutter_tdd/features/orders/domain/repositories/order_repository.dart'
+    as _i1012;
 import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 
@@ -75,7 +83,9 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i769.GlobalContext>(() => _i769.GlobalContext());
     gh.lazySingleton<_i443.GlobalNotification>(
         () => _i443.GlobalNotification());
+    gh.factory<_i1012.OrderRepository>(() => _i860.ImplOrderRepository());
     gh.factory<_i928.AuthRepository>(() => _i76.ImplAuthRepository());
+    gh.factory<_i1068.OrderDataSource>(() => _i372.ImplOrderDataSource());
     gh.factory<_i662.AuthDataSource>(() => _i23.ImplAuthDataSource());
     return this;
   }

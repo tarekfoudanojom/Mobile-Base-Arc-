@@ -283,6 +283,24 @@ Quick reference for current project state after refactoring.
 
 ---
 
+#### **[15. Auto Route Navigation Guide](15_auto_route_navigation_guide.md)** (~800 lines)
+**MANDATORY** guide for navigation using Auto Route.
+
+**Covers:**
+- ✅ Auto Route setup and configuration
+- ✅ Route definition patterns
+- ✅ Navigation methods and best practices
+- ✅ Route parameters and guards
+- ✅ Deep linking support
+- ✅ Authentication and permission guards
+- ✅ Common navigation patterns
+- ✅ Integration with features
+- ✅ Error handling and validation
+
+**MANDATORY:** All navigation MUST use Auto Route. No exceptions.
+
+---
+
 ## 🎯 **Quick Start Guide**
 
 ### **For New Developers:**
