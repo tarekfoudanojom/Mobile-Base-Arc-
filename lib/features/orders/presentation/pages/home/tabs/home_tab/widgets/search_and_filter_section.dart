@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_tdd/core/bloc/value_state_manager/value_state_manager_import.dart';
 import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
 import 'package:flutter_tdd/core/theme/text/app_text_style.dart';
@@ -80,6 +81,32 @@ class SearchAndFilterSection extends StatelessWidget {
                 );
               }).toList(),
             ),
+          ),
+          
+          // Beautiful Linear Progress Indicator
+          ObsValueConsumer<bool>(
+            observable: controller.isFilteringObs,
+            builder: (context, isFiltering) {
+              if (!isFiltering) return const SizedBox.shrink();
+              
+              return Container(
+                margin: const EdgeInsets.only(top: 12),
+                child: Container(
+                  height: 2,
+                  decoration: BoxDecoration(
+                    color: context.colors.grey.withValues(alpha: 0.2),
+                    borderRadius: BorderRadius.circular(1),
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(1),
+                    child: LinearProgressIndicator(
+                      backgroundColor: Colors.transparent,
+                      valueColor: AlwaysStoppedAnimation<Color>(context.colors.primary),
+                    ),
+                  ),
+                ),
+              );
+            },
           ),
         ],
       ),

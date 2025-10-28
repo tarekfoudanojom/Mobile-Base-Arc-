@@ -16,6 +16,7 @@ class HomeTabController {
   final ObsValue<OrderStatus?> selectedStatusObs = ObsValue<OrderStatus?>.withInit(null);
   final ObsValue<String> searchQueryObs = ObsValue<String>.withInit('');
   final ObsValue<bool> showScrollUpButtonObs = ObsValue<bool>.withInit(false);
+  final ObsValue<bool> isFilteringObs = ObsValue<bool>.withInit(false);
   
   // Controllers
   final RefreshController refreshController = RefreshController(initialRefresh: false);
@@ -107,7 +108,10 @@ class HomeTabController {
     selectedStatusObs.setValue(status);
     currentPage = 1;
     hasMoreData = true;
-    fetchOrders(onRefresh: true);
+    isFilteringObs.setValue(true);
+    fetchOrders(onRefresh: true).then((_) {
+      isFilteringObs.setValue(false);
+    });
   }
 
   /// Search orders
@@ -115,7 +119,10 @@ class HomeTabController {
     searchQueryObs.setValue(query);
     currentPage = 1;
     hasMoreData = true;
-    fetchOrders(onRefresh: true);
+    isFilteringObs.setValue(true);
+    fetchOrders(onRefresh: true).then((_) {
+      isFilteringObs.setValue(false);
+    });
   }
 
   /// Clear search
@@ -124,7 +131,10 @@ class HomeTabController {
     searchQueryObs.setValue('');
     currentPage = 1;
     hasMoreData = true;
-    fetchOrders(onRefresh: true);
+    isFilteringObs.setValue(true);
+    fetchOrders(onRefresh: true).then((_) {
+      isFilteringObs.setValue(false);
+    });
   }
 
   /// Update order status
