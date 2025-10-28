@@ -2,6 +2,7 @@ import 'package:flutter_tdd/core/helpers/di.dart';
 import 'package:flutter_tdd/core/http/models/result.dart';
 import 'package:flutter_tdd/features/orders/data/data_source/order_data_source.dart';
 import 'package:flutter_tdd/features/orders/data/models/order_model/order_model.dart';
+import 'package:flutter_tdd/features/orders/domain/entity/create_order_params.dart';
 import 'package:flutter_tdd/features/orders/data/enums/order_status.dart';
 import 'package:flutter_tdd/features/orders/domain/repositories/order_repository.dart';
 import 'package:injectable/injectable.dart';
@@ -38,5 +39,10 @@ class ImplOrderRepository extends OrderRepository {
   @override
   Future<MyResult<Map<String, int>>> getOrderStatistics() async {
     return await dataSource.getOrderStatistics();
+  }
+
+  @override
+  Future<MyResult<OrderModel>> createOrder(CreateOrderParams params) async {
+    return await dataSource.createOrder(params);
   }
 }

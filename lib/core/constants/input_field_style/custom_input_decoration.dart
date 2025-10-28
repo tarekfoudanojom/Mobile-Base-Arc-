@@ -63,16 +63,18 @@ class CustomInputDecoration extends InputDecoration {
   @override
   InputBorder get enabledBorder =>
       enableBorder ??
-          UnderlineInputBorder(
-            borderSide:
-            BorderSide(color: enableColor ?? Colors.transparent, width: .6),
+          OutlineInputBorder(
+            borderSide: BorderSide(
+              color: enableColor ?? Colors.transparent, 
+              width: borderWidth ?? 1,
+            ),
             borderRadius: borderRadius ?? BorderRadius.circular(10),
           );
 
   @override
   InputBorder get focusedBorder =>
       focusBorder ??
-          UnderlineInputBorder(
+          OutlineInputBorder(
               borderRadius: borderRadius ?? BorderRadius.circular(10),
               borderSide: BorderSide(
                   color: focusColor ?? AppColors.noContextInstance.greyWhite,
@@ -81,21 +83,21 @@ class CustomInputDecoration extends InputDecoration {
   @override
   InputBorder get errorBorder =>
       internalErrorBorder ??
-          UnderlineInputBorder(
-              borderSide: const BorderSide(color: Colors.red, width: .5),
+          OutlineInputBorder(
+              borderSide: const BorderSide(color: Colors.red, width: 1),
               borderRadius: borderRadius ?? BorderRadius.circular(10));
 
   @override
   InputBorder get focusedErrorBorder =>
       internalErrorBorder ??
-          UnderlineInputBorder(
+          OutlineInputBorder(
               borderRadius: borderRadius ?? BorderRadius.circular(10),
               borderSide: const BorderSide(color: Colors.red, width: 1));
 
   @override
   TextStyle get errorStyle =>
       errorTextStyle ??
-          AppTextStyle.s12_w400(color: AppColors.snackBarRedError);
+          AppTextStyle.s12_w400(color: AppColors.fixedColors.red);
 
   @override
   String? get hintText => hintString;

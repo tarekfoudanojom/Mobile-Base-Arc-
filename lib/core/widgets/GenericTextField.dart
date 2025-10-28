@@ -232,16 +232,6 @@ class _GenericTextFieldState extends State<GenericTextField> {
   Widget build(BuildContext context) {
     return Container(
       margin: widget.margin ?? EdgeInsets.zero,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: (widget.label == null
-              ? widget.enableBorderColor
-              : widget.enableBorder?.borderSide.color) ??
-              _enableBorderColor,
-          width: widget.enableBorder?.borderSide.width ?? 1,
-        ),
-        borderRadius: widget.radius ?? BorderRadius.circular(10),
-      ),
       child: widget.fieldTypes == FieldTypes.clickable
           ? _buildClickableField()
           : _buildFormField(),
@@ -309,7 +299,7 @@ class _GenericTextFieldState extends State<GenericTextField> {
       style: widget.inputStyle ??
           AppTextStyle.s17_w500(
             color: widget.textColor ?? context.colors.black,
-          ).copyWith(fontFamily: widget.fontFamily, height: 1.7),
+          ).copyWith(fontFamily: widget.fontFamily),
       decoration: CustomInputDecoration(
           labelWidget: widget.addAstric == true
               ? Text.rich(
@@ -336,7 +326,10 @@ class _GenericTextFieldState extends State<GenericTextField> {
           hintTextStyle: widget.hintTextStyle,
           prefIcon: widget.prefixIcon,
           sufIcon: widget.suffixIcon,
-          enableColor: _enableBorderColor,
+          enableColor: (widget.label == null
+              ? widget.enableBorderColor
+              : widget.enableBorder?.borderSide.color) ??
+              _enableBorderColor,
           focsColor: widget.focusBorderColor,
           customFillColor: widget.fillColor ?? context.colors.white,
           suffixWidget: widget.suffixWidget,
@@ -348,7 +341,7 @@ class _GenericTextFieldState extends State<GenericTextField> {
           internalErrorBorder: widget.errorBorder,
           lang: context.watch<DeviceCubit>().state.model.locale.languageCode,
           labelColor: widget.labelColor,
-          borderWidth: widget.borderWidth,
+          borderWidth: widget.enableBorder?.borderSide.width ?? widget.borderWidth ?? 1,
           suffixIconConstraintsValue: widget.suffixIconConstraintsValue,
           prefixIconConstraint: widget.prefixIconConstraint,
           helperString: widget.helperText,

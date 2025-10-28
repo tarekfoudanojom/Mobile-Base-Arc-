@@ -11,5 +11,9 @@ final baseRoutes = [
     page: OrderDetailsRoute.page,
     path: '/orders/details/:orderId',
   ),
+  AutoRoute(
+    page: CreateOrderRoute.page,
+    path: '/orders/create',
+  ),
 ];
 

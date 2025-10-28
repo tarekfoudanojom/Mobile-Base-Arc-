@@ -32,6 +32,15 @@ class _HomeTabPageState extends State<HomeTabPage> {
           style: AppTextStyle.s18_w600(color: context.colors.textPrimary),
         ),
         backgroundColor: context.colors.white,
+        trailing: CupertinoButton(
+          padding: EdgeInsets.zero,
+          onPressed: () => _navigateToCreateOrder(context),
+          child: Icon(
+            CupertinoIcons.add,
+            color: context.colors.primary,
+            size: 24,
+          ),
+        ),
       ),
       child: Stack(
         children: [
@@ -58,5 +67,9 @@ class _HomeTabPageState extends State<HomeTabPage> {
     );
   }
 
+  /// Navigate to create order page
+  void _navigateToCreateOrder(BuildContext context) {
+    context.router.push(const CreateOrderRoute());
+  }
 }
 

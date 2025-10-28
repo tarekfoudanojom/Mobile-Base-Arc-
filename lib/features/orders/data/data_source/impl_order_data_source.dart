@@ -3,6 +3,7 @@ import 'package:flutter_tdd/core/errors/unknown_error.dart';
 import 'package:flutter_tdd/core/http/models/result.dart';
 import 'package:flutter_tdd/features/orders/data/data_source/order_data_source.dart';
 import 'package:flutter_tdd/features/orders/data/models/order_model/order_model.dart';
+import 'package:flutter_tdd/features/orders/domain/entity/create_order_params.dart';
 import 'package:flutter_tdd/features/orders/data/enums/order_status.dart';
 import 'package:injectable/injectable.dart';
 
@@ -284,6 +285,40 @@ class ImplOrderDataSource extends OrderDataSource {
       return MyResult<Map<String, int>>.isSuccess(stats);
     } catch (e) {
       return MyResult<Map<String, int>>.isError(UnknownError(msg: "Failed to fetch order statistics: ${e.toString()}"));
+    }
+  }
+
+  @override
+  Future<MyResult<OrderModel>> createOrder(CreateOrderParams params) async {
+    // Simulate network delay
+    await Future.delayed(Duration(milliseconds: 800 + Random().nextInt(1200)));
+
+    try {
+      // Generate new order ID
+      final newId = _mockOrders.length + 1;
+      
+      // Create new order
+      final newOrder = OrderModel(
+        id: newId,
+        orderNumber: "ORD-2024-${newId.toString().padLeft(3, '0')}",
+        customerName: params.customerName,
+        customerEmail: params.customerEmail,
+        totalAmount: 0.0, // Default amount since we don't have item details
+        status: const OrderStatus.pending(),
+        orderDate: DateTime.now().toIso8601String(),
+        deliveryDate: params.deliveryDate,
+        shippingAddress: params.shippingAddress,
+        paymentMethod: params.paymentMethod,
+        notes: params.notes,
+        itemsCount: params.itemCount,
+      );
+
+      // Add to mock data
+      _mockOrders.add(newOrder);
+
+      return MyResult<OrderModel>.isSuccess(newOrder);
+    } catch (e) {
+      return MyResult<OrderModel>.isError(UnknownError(msg: "Failed to create order: ${e.toString()}"));
     }
   }
 }
