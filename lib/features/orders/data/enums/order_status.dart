@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter_tdd/core/localization/translate.dart';
 
 part 'order_status.freezed.dart';
 
@@ -42,12 +43,12 @@ class OrderStatus with _$OrderStatus {
       );
 
   String get displayName => when(
-        pending: () => 'Pending',
-        processing: () => 'Processing',
-        completed: () => 'Completed',
-        cancelled: () => 'Cancelled',
-        shipped: () => 'Shipped',
-        delivered: () => 'Delivered',
+        pending: () => Translate.s.pending,
+        processing: () => Translate.s.processing,
+        completed: () => Translate.s.completed,
+        cancelled: () => Translate.s.cancelled,
+        shipped: () => Translate.s.shipped,
+        delivered: () => Translate.s.delivered,
       );
 
   String get value => toJson();

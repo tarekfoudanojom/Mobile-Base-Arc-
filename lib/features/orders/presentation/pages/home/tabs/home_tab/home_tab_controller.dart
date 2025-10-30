@@ -3,6 +3,7 @@ import 'package:flutter_tdd/core/bloc/base_bloc/base_bloc.dart';
 import 'package:flutter_tdd/core/bloc/value_state_manager/value_state_manager_import.dart';
 import 'package:flutter_tdd/core/helpers/di.dart';
 import 'package:flutter_tdd/core/http/models/result.dart';
+import 'package:flutter_tdd/core/localization/translate.dart';
 import 'package:flutter_tdd/features/orders/data/enums/order_status.dart';
 import 'package:flutter_tdd/features/orders/data/models/order_model/order_model.dart';
 import 'package:flutter_tdd/features/orders/domain/repositories/order_repository.dart';
@@ -191,7 +192,7 @@ class HomeTabController {
 
   /// Get status display name
   String getStatusDisplayName(OrderStatus? status) {
-    if (status == null) return 'All Orders';
+    if (status == null) return Translate.s.all_orders;
     return status.displayName;
   }
 

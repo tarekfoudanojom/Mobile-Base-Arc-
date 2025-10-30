@@ -29,7 +29,7 @@ class _CreateOrderPageState extends State<CreateOrderPage> {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text(
-          'Create Order',
+          Translate.s.create_order,
           style: AppTextStyle.s18_w600(color: context.colors.textPrimary),
         ),
         backgroundColor: context.colors.white,

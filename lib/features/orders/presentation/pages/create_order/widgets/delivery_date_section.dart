@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tdd/core/bloc/value_state_manager/value_state_manager_import.dart';
+import 'package:flutter_tdd/core/localization/translate.dart';
 import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
 import 'package:flutter_tdd/core/theme/text/app_text_style.dart';
 import 'package:flutter_tdd/core/widgets/GenericTextField.dart';
@@ -20,7 +21,7 @@ class DeliveryDateSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SectionTitle(title: 'Delivery Date (Optional)'),
+        SectionTitle(title: Translate.s.delivery_date_optional),
         const SizedBox(height: 12),
         ObsValueConsumer<DateTime?>(
           observable: controller.selectedDeliveryDateObs,
@@ -30,7 +31,7 @@ class DeliveryDateSection extends StatelessWidget {
               fieldTypes: FieldTypes.clickable,
               type: TextInputType.datetime,
               action: TextInputAction.done,
-              hint: 'Select delivery date',
+              hint: Translate.s.select_delivery_date,
               onTap: () {
                 controller.notifyFormChange();
                 _showAdaptiveDatePicker(context);

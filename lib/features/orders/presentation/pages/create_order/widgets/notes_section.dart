@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
+import 'package:flutter_tdd/core/localization/translate.dart';
 import 'package:flutter_tdd/core/widgets/GenericTextField.dart';
 import 'package:flutter_tdd/features/orders/presentation/pages/create_order/create_order_controller.dart';
 import 'package:flutter_tdd/features/orders/presentation/pages/create_order/widgets/section_title.dart';
@@ -17,11 +17,11 @@ class NotesSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SectionTitle(title: 'Notes (Optional)'),
+        SectionTitle(title: Translate.s.notes_optional),
         const SizedBox(height: 12),
         GenericTextField(
           controller: controller.notesController,
-          hint: 'Order Notes (Optional)',
+          hint: Translate.s.order_notes_optional,
           fieldTypes: FieldTypes.rich,
           type: TextInputType.multiline,
           action: TextInputAction.newline,

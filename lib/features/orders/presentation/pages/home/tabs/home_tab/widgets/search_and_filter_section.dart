@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tdd/core/bloc/value_state_manager/value_state_manager_import.dart';
+import 'package:flutter_tdd/core/localization/translate.dart';
 import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
 import 'package:flutter_tdd/core/theme/text/app_text_style.dart';
 import 'package:flutter_tdd/features/orders/data/enums/order_status.dart';
@@ -24,7 +25,7 @@ class SearchAndFilterSection extends StatelessWidget {
           // Search Bar
           CupertinoTextField(
             controller: controller.searchController,
-            placeholder: 'Search orders...',
+            placeholder: Translate.s.search_orders,
             placeholderStyle: AppTextStyle.s14_w400(color: context.colors.grey),
             style: AppTextStyle.s14_w400(color: context.colors.textPrimary),
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),

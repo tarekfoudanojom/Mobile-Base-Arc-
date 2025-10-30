@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_tdd/core/bloc/value_state_manager/value_state_manager_import.dart';
 import 'package:flutter_tdd/core/helpers/app_snack_bar_service.dart';
 import 'package:flutter_tdd/core/helpers/di.dart';
+import 'package:flutter_tdd/core/localization/translate.dart';
 import 'package:flutter_tdd/features/orders/data/models/order_model/order_model.dart';
 import 'package:flutter_tdd/features/orders/domain/entity/create_order_params.dart';
 import 'package:flutter_tdd/features/orders/domain/repositories/order_repository.dart';
@@ -87,10 +88,10 @@ class CreateOrderController {
   /// Validate customer name
   String? validateCustomerName(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return 'Customer name is required';
+      return Translate.s.customer_name_required;
     }
     if (value.trim().length < 2) {
-      return 'Customer name must be at least 2 characters';
+      return Translate.s.customer_name_min_length;
     }
     return null;
   }
@@ -98,10 +99,10 @@ class CreateOrderController {
   /// Validate customer email
   String? validateCustomerEmail(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return 'Customer email is required';
+      return Translate.s.customer_email_required;
     }
     if (!value.contains('@') || !value.contains('.')) {
-      return 'Please enter a valid email address';
+      return Translate.s.customer_email_invalid;
     }
     return null;
   }
@@ -110,7 +111,7 @@ class CreateOrderController {
   String? validateCustomerPhone(String? value) {
     if (value != null && value.trim().isNotEmpty) {
       if (value.trim().length < 10) {
-        return 'Phone number must be at least 10 digits';
+        return Translate.s.customer_phone_min_length;
       }
     }
     return null;
@@ -119,10 +120,10 @@ class CreateOrderController {
   /// Validate shipping address
   String? validateShippingAddress(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return 'Shipping address is required';
+      return Translate.s.shipping_address_required;
     }
     if (value.trim().length < 10) {
-      return 'Shipping address must be at least 10 characters';
+      return Translate.s.shipping_address_min_length;
     }
     return null;
   }
@@ -130,14 +131,14 @@ class CreateOrderController {
   /// Validate item count
   String? validateItemCount(String? value) {
     if (value == null || value.trim().isEmpty) {
-      return 'Item count is required';
+      return Translate.s.item_count_required;
     }
     final count = int.tryParse(value);
     if (count == null) {
-      return 'Please enter a valid number';
+      return Translate.s.item_count_invalid;
     }
     if (count <= 0) {
-      return 'Item count must be greater than 0';
+      return Translate.s.item_count_min;
     }
     return null;
   }
@@ -146,7 +147,7 @@ class CreateOrderController {
   /// Validate payment method
   String? validatePaymentMethod() {
     if (selectedPaymentMethodObs.getValue().isEmpty) {
-      return 'Payment method is required';
+      return Translate.s.payment_method_required;
     }
     return null;
   }
@@ -195,7 +196,7 @@ class CreateOrderController {
         isSuccess: (order) {
           createdOrderObs.setValue(order);
           isLoadingObs.setValue(false);
-          AppSnackBar.showSuccessSnackBar('Order created successfully');
+          AppSnackBar.showSuccessSnackBar(Translate.s.order_created_success);
           AutoRouter.of(context).maybePop();
         },
         isError: (error) {
@@ -204,7 +205,7 @@ class CreateOrderController {
         },
       );
     } catch (e) {
-      errorMessageObs.setValue('An unexpected error occurred');
+      errorMessageObs.setValue(Translate.s.unexpected_error);
       isLoadingObs.setValue(false);
     }
   }

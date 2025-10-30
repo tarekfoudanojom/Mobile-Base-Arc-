@@ -664,10 +664,10 @@ class S {
     );
   }
 
-  /// `Welcome to Nojom`
+  /// `Welcome to MyApp`
   String get welcome_message {
     return Intl.message(
-      'Welcome to Nojom',
+      'Welcome to MyApp',
       name: 'welcome_message',
       desc: '',
       args: [],
@@ -721,6 +721,756 @@ class S {
       name: 'no_internet_connection',
       desc: '',
       args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Language`
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Theme`
+  String get theme {
+    return Intl.message(
+      'Theme',
+      name: 'theme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Arabic`
+  String get arabic {
+    return Intl.message(
+      'Arabic',
+      name: 'arabic',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message(
+      'English',
+      name: 'english',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark Mode`
+  String get dark_mode {
+    return Intl.message(
+      'Dark Mode',
+      name: 'dark_mode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Light Mode`
+  String get light_mode {
+    return Intl.message(
+      'Light Mode',
+      name: 'light_mode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `System Mode`
+  String get system_mode {
+    return Intl.message(
+      'System Mode',
+      name: 'system_mode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Appearance`
+  String get appearance {
+    return Intl.message(
+      'Appearance',
+      name: 'appearance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General`
+  String get general {
+    return Intl.message(
+      'General',
+      name: 'general',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Order`
+  String get create_order {
+    return Intl.message(
+      'Create Order',
+      name: 'create_order',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Details`
+  String get order_details {
+    return Intl.message(
+      'Order Details',
+      name: 'order_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get total {
+    return Intl.message(
+      'Total',
+      name: 'total',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Items`
+  String get items {
+    return Intl.message(
+      'Items',
+      name: 'items',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date`
+  String get date {
+    return Intl.message(
+      'Date',
+      name: 'date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment`
+  String get payment {
+    return Intl.message(
+      'Payment',
+      name: 'payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notes`
+  String get notes {
+    return Intl.message(
+      'Notes',
+      name: 'notes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View Details`
+  String get view_details {
+    return Intl.message(
+      'View Details',
+      name: 'view_details',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Process`
+  String get process {
+    return Intl.message(
+      'Process',
+      name: 'process',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Customer Information`
+  String get customer_information {
+    return Intl.message(
+      'Customer Information',
+      name: 'customer_information',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Customer Name`
+  String get customer_name {
+    return Intl.message(
+      'Customer Name',
+      name: 'customer_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Customer Email`
+  String get customer_email {
+    return Intl.message(
+      'Customer Email',
+      name: 'customer_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Customer Phone`
+  String get customer_phone {
+    return Intl.message(
+      'Customer Phone',
+      name: 'customer_phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shipping Address`
+  String get shipping_address {
+    return Intl.message(
+      'Shipping Address',
+      name: 'shipping_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Item Count`
+  String get item_count {
+    return Intl.message(
+      'Item Count',
+      name: 'item_count',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Method`
+  String get payment_method {
+    return Intl.message(
+      'Payment Method',
+      name: 'payment_method',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery Date`
+  String get delivery_date {
+    return Intl.message(
+      'Delivery Date',
+      name: 'delivery_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Credit Card`
+  String get credit_card {
+    return Intl.message(
+      'Credit Card',
+      name: 'credit_card',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bank Transfer`
+  String get bank_transfer {
+    return Intl.message(
+      'Bank Transfer',
+      name: 'bank_transfer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `PayPal`
+  String get paypal {
+    return Intl.message(
+      'PayPal',
+      name: 'paypal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cash on Delivery`
+  String get cash_on_delivery {
+    return Intl.message(
+      'Cash on Delivery',
+      name: 'cash_on_delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apple Pay`
+  String get apple_pay {
+    return Intl.message(
+      'Apple Pay',
+      name: 'apple_pay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Google Pay`
+  String get google_pay {
+    return Intl.message(
+      'Google Pay',
+      name: 'google_pay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Created Successfully!`
+  String get order_created_successfully {
+    return Intl.message(
+      'Order Created Successfully!',
+      name: 'order_created_successfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Number`
+  String get order_number {
+    return Intl.message(
+      'Order Number',
+      name: 'order_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Amount`
+  String get total_amount {
+    return Intl.message(
+      'Total Amount',
+      name: 'total_amount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Customer`
+  String get customer {
+    return Intl.message(
+      'Customer',
+      name: 'customer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back to Home`
+  String get back_to_home {
+    return Intl.message(
+      'Back to Home',
+      name: 'back_to_home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Another`
+  String get create_another {
+    return Intl.message(
+      'Create Another',
+      name: 'create_another',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Customer name is required`
+  String get customer_name_required {
+    return Intl.message(
+      'Customer name is required',
+      name: 'customer_name_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Customer name must be at least 2 characters`
+  String get customer_name_min_length {
+    return Intl.message(
+      'Customer name must be at least 2 characters',
+      name: 'customer_name_min_length',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Customer email is required`
+  String get customer_email_required {
+    return Intl.message(
+      'Customer email is required',
+      name: 'customer_email_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid email address`
+  String get customer_email_invalid {
+    return Intl.message(
+      'Please enter a valid email address',
+      name: 'customer_email_invalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number must be at least 10 digits`
+  String get customer_phone_min_length {
+    return Intl.message(
+      'Phone number must be at least 10 digits',
+      name: 'customer_phone_min_length',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shipping address is required`
+  String get shipping_address_required {
+    return Intl.message(
+      'Shipping address is required',
+      name: 'shipping_address_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shipping address must be at least 10 characters`
+  String get shipping_address_min_length {
+    return Intl.message(
+      'Shipping address must be at least 10 characters',
+      name: 'shipping_address_min_length',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Item count is required`
+  String get item_count_required {
+    return Intl.message(
+      'Item count is required',
+      name: 'item_count_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid number`
+  String get item_count_invalid {
+    return Intl.message(
+      'Please enter a valid number',
+      name: 'item_count_invalid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Item count must be greater than 0`
+  String get item_count_min {
+    return Intl.message(
+      'Item count must be greater than 0',
+      name: 'item_count_min',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment method is required`
+  String get payment_method_required {
+    return Intl.message(
+      'Payment method is required',
+      name: 'payment_method_required',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order created successfully`
+  String get order_created_success {
+    return Intl.message(
+      'Order created successfully',
+      name: 'order_created_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An unexpected error occurred`
+  String get unexpected_error {
+    return Intl.message(
+      'An unexpected error occurred',
+      name: 'unexpected_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order not found`
+  String get order_not_found {
+    return Intl.message(
+      'Order not found',
+      name: 'order_not_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Always use light theme`
+  String get always_use_light_theme {
+    return Intl.message(
+      'Always use light theme',
+      name: 'always_use_light_theme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Always use dark theme`
+  String get always_use_dark_theme {
+    return Intl.message(
+      'Always use dark theme',
+      name: 'always_use_dark_theme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Follow system setting`
+  String get follow_system_setting {
+    return Intl.message(
+      'Follow system setting',
+      name: 'follow_system_setting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search orders...`
+  String get search_orders {
+    return Intl.message(
+      'Search orders...',
+      name: 'search_orders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All Orders`
+  String get all_orders {
+    return Intl.message(
+      'All Orders',
+      name: 'all_orders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pending`
+  String get pending {
+    return Intl.message(
+      'Pending',
+      name: 'pending',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Processing`
+  String get processing {
+    return Intl.message(
+      'Processing',
+      name: 'processing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Shipped`
+  String get shipped {
+    return Intl.message(
+      'Shipped',
+      name: 'shipped',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivered`
+  String get delivered {
+    return Intl.message(
+      'Delivered',
+      name: 'delivered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Completed`
+  String get completed {
+    return Intl.message(
+      'Completed',
+      name: 'completed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancelled`
+  String get cancelled {
+    return Intl.message(
+      'Cancelled',
+      name: 'cancelled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No orders found`
+  String get no_orders_found {
+    return Intl.message(
+      'No orders found',
+      name: 'no_orders_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pull down to refresh or try a different filter`
+  String get pull_to_refresh_or_filter {
+    return Intl.message(
+      'Pull down to refresh or try a different filter',
+      name: 'pull_to_refresh_or_filter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notes (Optional)`
+  String get notes_optional {
+    return Intl.message(
+      'Notes (Optional)',
+      name: 'notes_optional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Notes (Optional)`
+  String get order_notes_optional {
+    return Intl.message(
+      'Order Notes (Optional)',
+      name: 'order_notes_optional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment & Delivery`
+  String get payment_delivery {
+    return Intl.message(
+      'Payment & Delivery',
+      name: 'payment_delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select payment method`
+  String get select_payment_method {
+    return Intl.message(
+      'Select payment method',
+      name: 'select_payment_method',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Payment Method`
+  String get select_payment_method_title {
+    return Intl.message(
+      'Select Payment Method',
+      name: 'select_payment_method_title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery Date (Optional)`
+  String get delivery_date_optional {
+    return Intl.message(
+      'Delivery Date (Optional)',
+      name: 'delivery_date_optional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select delivery date`
+  String get select_delivery_date {
+    return Intl.message(
+      'Select delivery date',
+      name: 'select_delivery_date',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Customer Phone (Optional)`
+  String get customer_phone_optional {
+    return Intl.message(
+      'Customer Phone (Optional)',
+      name: 'customer_phone_optional',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order created successfully! Order #{orderNumber}`
+  String order_created_success_message(Object orderNumber) {
+    return Intl.message(
+      'Order created successfully! Order #$orderNumber',
+      name: 'order_created_success_message',
+      desc: '',
+      args: [orderNumber],
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_tdd/core/bloc/value_state_manager/value_state_manager_import.dart';
+import 'package:flutter_tdd/core/localization/translate.dart';
 import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
 import 'package:flutter_tdd/core/theme/text/app_text_style.dart';
 import 'package:flutter_tdd/core/widgets/GenericTextField.dart';
@@ -19,7 +20,7 @@ class PaymentMethodSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SectionTitle(title: 'Payment Method'),
+        SectionTitle(title: Translate.s.payment_method),
         const SizedBox(height: 12),
         ObsValueConsumer<String>(
           observable: controller.selectedPaymentMethodObs,
@@ -29,7 +30,7 @@ class PaymentMethodSection extends StatelessWidget {
               fieldTypes: FieldTypes.clickable,
               type: TextInputType.text,
               action: TextInputAction.done,
-              hint: 'Select payment method',
+              hint: Translate.s.select_payment_method,
               onTap: () {
                 controller.notifyFormChange();
                 _showPaymentMethodBottomSheet(context);
@@ -77,7 +78,7 @@ class PaymentMethodSection extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(16),
               child: Text(
-                'Select Payment Method',
+                Translate.s.select_payment_method_title,
                 style: AppTextStyle.s18_w600(color: context.colors.textPrimary),
               ),
             ),
@@ -142,7 +143,7 @@ class PaymentMethodSection extends StatelessWidget {
                   color: context.colors.grey.withValues(alpha: 0.1),
                   onPressed: () => Navigator.of(context).pop(),
                   child: Text(
-                    'Cancel',
+                    Translate.s.cancel,
                     style: AppTextStyle.s16_w500(color: context.colors.textPrimary),
                   ),
                 ),

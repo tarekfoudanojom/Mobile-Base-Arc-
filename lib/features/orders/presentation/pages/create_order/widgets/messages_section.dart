@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_tdd/core/bloc/value_state_manager/value_state_manager_import.dart';
+import 'package:flutter_tdd/core/localization/translate.dart';
 import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
 import 'package:flutter_tdd/core/theme/text/app_text_style.dart';
 import 'package:flutter_tdd/features/orders/data/models/order_model/order_model.dart';
@@ -71,7 +72,7 @@ class MessagesSection extends StatelessWidget {
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      'Order created successfully! Order #${createdOrder.orderNumber}',
+                      Translate.s.order_created_success_message(createdOrder.orderNumber),
                       style: AppTextStyle.s14_w400(color: context.colors.success),
                     ),
                   ),

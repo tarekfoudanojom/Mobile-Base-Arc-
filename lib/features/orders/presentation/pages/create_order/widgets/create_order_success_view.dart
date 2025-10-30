@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_tdd/core/localization/translate.dart';
 import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
 import 'package:flutter_tdd/core/theme/text/app_text_style.dart';
 import 'package:flutter_tdd/features/orders/data/models/order_model/order_model.dart';
@@ -30,25 +31,25 @@ class CreateOrderSuccessView extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             Text(
-              'Order Created Successfully!',
+              Translate.s.order_created_successfully,
               style: AppTextStyle.s24_w700(color: context.colors.textPrimary),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
             Text(
-              'Order Number: ${order.orderNumber}',
+              '${Translate.s.order_number}: ${order.orderNumber}',
               style: AppTextStyle.s18_w600(color: context.colors.primary),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 8),
             Text(
-              'Total Amount: ${order.formattedTotalAmount}',
+              '${Translate.s.total_amount}: ${order.formattedTotalAmount}',
               style: AppTextStyle.s16_w500(color: context.colors.textPrimary),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 8),
             Text(
-              'Customer: ${order.customerName}',
+              '${Translate.s.customer}: ${order.customerName}',
               style: AppTextStyle.s14_w400(color: context.colors.grey),
               textAlign: TextAlign.center,
             ),
@@ -57,7 +58,7 @@ class CreateOrderSuccessView extends StatelessWidget {
               width: double.infinity,
               child: CupertinoButton.filled(
                 onPressed: onBackToHome,
-                child: const Text('Back to Orders'),
+                child: Text(Translate.s.back_to_home),
               ),
             ),
             const SizedBox(height: 12),
@@ -67,7 +68,7 @@ class CreateOrderSuccessView extends StatelessWidget {
                 color: context.colors.primary.withValues(alpha: 0.1),
                 onPressed: onCreateAnother,
                 child: Text(
-                  'Create Another Order',
+                  Translate.s.create_another,
                   style: AppTextStyle.s16_w500(color: context.colors.primary),
                 ),
               ),

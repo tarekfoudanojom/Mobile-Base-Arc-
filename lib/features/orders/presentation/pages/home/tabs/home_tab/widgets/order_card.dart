@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_tdd/core/localization/translate.dart';
 import 'package:flutter_tdd/core/routes/router_imports.gr.dart';
 import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
 import 'package:flutter_tdd/core/theme/text/app_text_style.dart';
@@ -66,13 +67,13 @@ class OrderCard extends StatelessWidget {
           Row(
             children: [
               Expanded(
-                child: OrderDetailItem(label: 'Total', value: order.formattedTotalAmount),
+                child: OrderDetailItem(label: Translate.s.total, value: order.formattedTotalAmount),
               ),
               Expanded(
-                child: OrderDetailItem(label: 'Items', value: '${order.itemsCount}'),
+                child: OrderDetailItem(label: Translate.s.items, value: '${order.itemsCount}'),
               ),
               Expanded(
-                child: OrderDetailItem(label: 'Date', value: order.formattedOrderDate),
+                child: OrderDetailItem(label: Translate.s.date, value: order.formattedOrderDate),
               ),
             ],
           ),
@@ -81,14 +82,14 @@ class OrderCard extends StatelessWidget {
           
           // Payment Method
           Text(
-            'Payment: ${order.paymentMethod}',
+            '${Translate.s.payment}: ${order.paymentMethod}',
             style: AppTextStyle.s12_w400(color: context.colors.grey),
           ),
           
           if (order.notes != null) ...[
             const SizedBox(height: 8),
             Text(
-              'Notes: ${order.notes}',
+              '${Translate.s.notes}: ${order.notes}',
               style: AppTextStyle.s12_w400(color: context.colors.grey),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
@@ -105,7 +106,7 @@ class OrderCard extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 8),
                   color: context.colors.primary.withValues(alpha: 0.1),
                   child: Text(
-                    'View Details',
+                    Translate.s.view_details,
                     style: AppTextStyle.s14_w500(color: context.colors.primary),
                   ),
                   onPressed: () {
@@ -120,7 +121,7 @@ class OrderCard extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
                   color: context.colors.success,
                   child: Text(
-                    'Process',
+                    Translate.s.process,
                     style: AppTextStyle.s14_w500(color: context.colors.white),
                   ),
                   onPressed: () => controller.updateOrderStatus(order.id, const OrderStatus.processing()),

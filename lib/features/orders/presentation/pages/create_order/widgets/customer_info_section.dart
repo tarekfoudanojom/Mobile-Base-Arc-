@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_tdd/core/localization/translate.dart';
 import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
 import 'package:flutter_tdd/core/theme/text/app_text_style.dart';
 import 'package:flutter_tdd/core/widgets/GenericTextField.dart';
@@ -31,7 +32,7 @@ class CustomerInfoSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Customer Information',
+            Translate.s.customer_information,
             style: AppTextStyle.s18_w600(color: context.colors.textPrimary),
           ),
           
@@ -43,7 +44,7 @@ class CustomerInfoSection extends StatelessWidget {
             fieldTypes: FieldTypes.normal,
             type: TextInputType.name,
             action: TextInputAction.next,
-            hint: 'Customer Name',
+            hint: Translate.s.customer_name,
             onChange: (_) => controller.notifyFormChange(),
             fillColor: context.colors.white,
             validate: controller.validateCustomerName,
@@ -61,7 +62,7 @@ class CustomerInfoSection extends StatelessWidget {
             fieldTypes: FieldTypes.normal,
             type: TextInputType.emailAddress,
             action: TextInputAction.next,
-            hint: 'Customer Email',
+            hint: Translate.s.customer_email,
             onChange: (_) => controller.notifyFormChange(),
             fillColor: context.colors.white,
             validate: controller.validateCustomerEmail,
@@ -79,7 +80,7 @@ class CustomerInfoSection extends StatelessWidget {
             fieldTypes: FieldTypes.normal,
             type: TextInputType.phone,
             action: TextInputAction.next,
-            hint: 'Customer Phone (Optional)',
+            hint: Translate.s.customer_phone_optional,
             onChange: (_) => controller.notifyFormChange(),
             fillColor: context.colors.white,
             validate: controller.validateCustomerPhone,
@@ -97,7 +98,7 @@ class CustomerInfoSection extends StatelessWidget {
             fieldTypes: FieldTypes.normal,
             type: TextInputType.multiline,
             action: TextInputAction.newline,
-            hint: 'Shipping Address',
+            hint: Translate.s.shipping_address,
             fillColor: context.colors.white,
             maxLines: 3,
             onChange: (_) => controller.notifyFormChange(),
@@ -116,7 +117,7 @@ class CustomerInfoSection extends StatelessWidget {
             fieldTypes: FieldTypes.normal,
             type: TextInputType.multiline,
             action: TextInputAction.newline,
-            hint: 'Notes (Optional)',
+            hint: Translate.s.notes_optional,
             fillColor: context.colors.white,
             onChange: (_) => controller.notifyFormChange(),
             maxLines: 2,

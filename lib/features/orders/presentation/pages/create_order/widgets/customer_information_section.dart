@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_tdd/core/localization/translate.dart';
 import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
 import 'package:flutter_tdd/core/widgets/GenericTextField.dart';
 import 'package:flutter_tdd/features/orders/presentation/pages/create_order/create_order_controller.dart';
@@ -17,11 +18,11 @@ class CustomerInformationSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SectionTitle(title: 'Customer Information'),
+        SectionTitle(title: Translate.s.customer_information),
         const SizedBox(height: 12),
         GenericTextField(
           controller: controller.customerNameController,
-          hint: 'Customer Name',
+          hint: Translate.s.customer_name,
           validate: controller.validateCustomerName,
           fieldTypes: FieldTypes.normal,
           type: TextInputType.text,
@@ -35,7 +36,7 @@ class CustomerInformationSection extends StatelessWidget {
         const SizedBox(height: 16),
         GenericTextField(
           controller: controller.customerEmailController,
-          hint: 'Customer Email',
+          hint: Translate.s.customer_email,
           validate: controller.validateCustomerEmail,
           fieldTypes: FieldTypes.normal,
           type: TextInputType.emailAddress,
@@ -49,7 +50,7 @@ class CustomerInformationSection extends StatelessWidget {
         const SizedBox(height: 16),
         GenericTextField(
           controller: controller.customerPhoneController,
-          hint: 'Customer Phone (Optional)',
+          hint: Translate.s.customer_phone_optional,
           validate: controller.validateCustomerPhone,
           fieldTypes: FieldTypes.normal,
           type: TextInputType.phone,
@@ -63,7 +64,7 @@ class CustomerInformationSection extends StatelessWidget {
         const SizedBox(height: 16),
         GenericTextField(
           controller: controller.shippingAddressController,
-          hint: 'Shipping Address',
+          hint: Translate.s.shipping_address,
           validate: controller.validateShippingAddress,
           fieldTypes: FieldTypes.normal,
           type: TextInputType.multiline,
@@ -78,7 +79,7 @@ class CustomerInformationSection extends StatelessWidget {
         const SizedBox(height: 16),
         GenericTextField(
           controller: controller.itemCountController,
-          hint: 'Item Count',
+          hint: Translate.s.item_count,
           validate: controller.validateItemCount,
           fieldTypes: FieldTypes.normal,
           type: TextInputType.number,

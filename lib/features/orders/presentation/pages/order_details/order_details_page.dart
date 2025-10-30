@@ -34,7 +34,7 @@ class _OrderDetailsPageState extends State<OrderDetailsPage> {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text(
-          'Order Details',
+          Translate.s.order_details,
           style: AppTextStyle.s18_w600(color: context.colors.textPrimary),
         ),
         backgroundColor: context.colors.white,
