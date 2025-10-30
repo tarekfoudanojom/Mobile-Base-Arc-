@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_tdd/core/bloc/device_cubit/device_cubit.dart';
 import 'package:flutter_tdd/core/constants/app_constants.dart';
@@ -58,11 +59,16 @@ class _MyAppState extends State<MyApp> {
                     supportedLocales: S.delegate.supportedLocales,
                     locale: state.model.locale,
                     // These delegates make sure that the localization data for the proper language is loaded
-                    localizationsDelegates: const [
+                    localizationsDelegates:  const [
                       // 1
                       S.delegate,
                       // 2
                       DefaultCupertinoLocalizations.delegate,
+                      // Built-in localization of basic text for Material widgets
+                      GlobalMaterialLocalizations.delegate,
+                      // Built-in localization for text direction LTR/RTL
+                      GlobalWidgetsLocalizations.delegate,
+                      GlobalCupertinoLocalizations.delegate,
 
                     ],
                     routerDelegate:

@@ -1,6 +1,6 @@
 # 🏛️ App Layout & Layers Architecture Guide
 
-This comprehensive guide explains how to implement general app layouts and understand the multi-layer architecture of the Nojom Flutter application, including network layer, theme management, providers, and more.
+This comprehensive guide explains how to implement general app layouts and understand the multi-layer architecture of Flutter applications, including network layer, theme management, providers, and more.
 
 ---
 
@@ -70,11 +70,11 @@ Future _init() async {
   // 1. Initialize Flutter bindings
   WidgetsFlutterBinding.ensureInitialized();
   
-  // 2. Initialize Firebase
-  await Firebase.initializeApp();
+  // 2. Initialize core services
+  // await CoreServices.initialize();
   
-  // 3. Setup Crashlytics
-  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
+  // 3. Setup error handling
+  // FlutterError.onError = ErrorHandler.recordError;
   
   // 4. Initialize SharedPreferences
   var pref = await SharedPreferences.getInstance();
@@ -99,8 +99,8 @@ Future _init() async {
 ✅ **Critical order must be maintained:**
 
 1. **WidgetsFlutterBinding** - Flutter framework initialization
-2. **Firebase** - Firebase services
-3. **Crashlytics** - Error reporting
+2. **Core Services** - App services
+3. **Error Handling** - Error reporting
 4. **SharedPreferences** - Local storage
 5. **AppRouter** - Navigation system
 6. **Dependency Injection** - Service locator
@@ -126,7 +126,7 @@ MyApp (StatefulWidget)
                                   └── NetworkLayerWidget (Internet Connection)
                                       └── MediaQuery (Text Scaling)
                                           └── GestureDetector (Dismiss Keyboard)
-                                              └── StreamChat (Chat Integration)
+                                              └── Chat Integration
                                                   └── Router Content (Pages)
 ```
 
@@ -143,9 +143,9 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  // StreamChat client initialization
-  final client = StreamChatClient(
-    FlutterEnvironmentConfigReader.instance.getStreamKey(),
+  // Chat client initialization
+  // final client = ChatClient(
+  //   FlutterEnvironmentConfigReader.instance.getChatKey(),
     logLevel: Level.INFO,
     connectTimeout: const Duration(hours: 2),
     receiveTimeout: const Duration(hours: 2),
@@ -166,7 +166,7 @@ class _MyAppState extends State<MyApp> {
             initial: state.model.themeMode,
             
             builder: (theme, darkTheme) {
-              bool isStar = PrefHelper.getUserType() == UserTypeEnum.star;
+              bool isUser = PrefHelper.getUserType() == UserTypeEnum.user;
               
               return OverlaySupport(
                 // Layer 3: Overlay Support
@@ -186,16 +186,16 @@ class _MyAppState extends State<MyApp> {
                     GlobalMaterialLocalizations.delegate,
                     GlobalWidgetsLocalizations.delegate,
                     GlobalCupertinoLocalizations.delegate,
-                    ...GlobalStreamChatLocalizations.delegates,
-                    ArStreamChatLocalizations.delegate,
+                    // ...GlobalChatLocalizations.delegates,
+                    // ArChatLocalizations.delegate,
                   ],
                   
                   // Router setup
                   routerDelegate: getIt.get<AppRouter>().delegate(
                     navigatorObservers: () => [
-                      if (isStar) StarScreenLogger() else BrandScreenLogger(),
-                      SentryNavigatorObserver(),
-                      AmplitudeObserver(),
+                      if (isUser) UserScreenLogger() else AdminScreenLogger(),
+                      // SentryNavigatorObserver(),
+                      // AmplitudeObserver(),
                     ],
                   ),
                   routeInformationParser: getIt.get<AppRouter>().defaultRouteParser(),
@@ -221,11 +221,11 @@ class _MyAppState extends State<MyApp> {
                             // Layer 9: Keyboard Dismissal
                             onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
                             
-                            child: StreamChat(
+                            child: ChatWidget(
                               // Layer 10: Chat Integration
-                              client: client,
-                              backgroundKeepAlive: const Duration(minutes: 60),
-                              streamChatThemeData: StreamChatThemeData.light(),
+                              // client: client,
+                              // backgroundKeepAlive: const Duration(minutes: 60),
+                              // chatThemeData: ChatThemeData.light(),
                               
                               child: child!,
                             ),
@@ -363,7 +363,7 @@ showOverlayNotification((context) {
 ```dart
 MaterialApp.router(
   debugShowCheckedModeBanner: false,
-  title: 'Nojom',
+  title: 'MyApp',
   theme: lightTheme,
   darkTheme: darkTheme,
   locale: currentLocale,
@@ -382,7 +382,7 @@ MaterialApp.router(
     navigatorObservers: () => [
       ScreenLogger(),
       SentryNavigatorObserver(),
-      AmplitudeObserver(),
+      // AmplitudeObserver(),
     ],
   ),
   routeInformationParser: appRouter.defaultRouteParser(),
@@ -394,8 +394,8 @@ MaterialApp.router(
 
 **Navigator Observers:**
 - **ScreenLogger** - Log screen views for analytics
-- **SentryNavigatorObserver** - Track navigation for error context
-- **AmplitudeObserver** - Track screen views in Amplitude
+- **ErrorNavigatorObserver** - Track navigation for error context
+- **AnalyticsObserver** - Track screen views for analytics
 
 ---
 
@@ -618,15 +618,15 @@ User taps outside text field → keyboard dismisses automatically.
 
 ---
 
-### **Layer 11: StreamChat - Chat Integration**
+### **Layer 11: Chat Integration**
 
-**Purpose:** Integrate Stream Chat SDK.
+**Purpose:** Integrate Chat SDK.
 
 ```dart
-StreamChat(
-  client: client,
-  backgroundKeepAlive: const Duration(minutes: 60),
-  streamChatThemeData: StreamChatThemeData.light(),
+ChatWidget(
+  // client: client,
+  // backgroundKeepAlive: const Duration(minutes: 60),
+  // chatThemeData: ChatThemeData.light(),
   child: yourContent,
 )
 ```
@@ -851,25 +851,25 @@ Add more global cubits as your app grows:
 ```dart
 routerDelegate: getIt.get<AppRouter>().delegate(
   navigatorObservers: () => [
-    // Screen tracking (different for star/brand)
-    if (isStar) 
-      StarScreenLogger() 
+    // Screen tracking (different for user/admin)
+    if (isUser) 
+      UserScreenLogger() 
     else 
-      BrandScreenLogger(),
+      AdminScreenLogger(),
     
     // Error tracking
     SentryNavigatorObserver(),
     
     // Analytics tracking
-    AmplitudeObserver(),
+    // AmplitudeObserver(),
   ],
 )
 ```
 
 **Purpose of Observers:**
 - **ScreenLogger**: Log which screens users visit
-- **SentryNavigator**: Attach navigation breadcrumbs to errors
-- **AmplitudeObserver**: Track user journey for analytics
+- **ErrorNavigator**: Attach navigation breadcrumbs to errors
+- **AnalyticsObserver**: Track user journey for analytics
 
 ---
 

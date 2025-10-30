@@ -1,13 +1,13 @@
 # 📁 Project Structure Guide
 
-This document provides a comprehensive overview of the Nojom Flutter application's project structure, folder organization, and architectural patterns.
+This document provides a comprehensive overview of Flutter application project structure, folder organization, and architectural patterns.
 
 ---
 
 ## 🏗️ **Root Directory Structure**
 
 ```
-nojom_star/
+my_app/
 ├── android/                    # Android native configuration
 ├── ios/                        # iOS native configuration
 ├── macos/                      # macOS native configuration
@@ -35,8 +35,7 @@ nojom_star/
 lib/
 ├── main.dart                  # Application entry point
 ├── my_app.dart               # MyApp widget configuration
-├── res.dart                  # Resource imports (auto-generated)
-├── brand_res.dart            # Brand-specific resources (auto-generated)
+├── res.dart                  # App resources (auto-generated)
 ├── core/                     # Core modules and shared utilities
 ├── features/                 # Feature-based modules
 ├── generated/                # Auto-generated code
@@ -261,8 +260,8 @@ img_{name}.png              # Example: img_banner.png, img_logo.png
 # Illustrations
 ill_{name}.svg              # Example: ill_empty_state.svg
 
-# Brand-specific
-brand_{name}.svg            # Example: brand_logo.svg
+# App-specific
+app_{name}.svg              # Example: app_logo.svg
 ```
 
 ---
@@ -287,8 +286,8 @@ lib/generated/
 // intl_en.arb
 {
   "@@locale": "en",
-  "app_name": "Nojom",
-  "welcome_message": "Welcome to Nojom",
+  "app_name": "MyApp",
+  "welcome_message": "Welcome to MyApp",
   "@welcome_message": {
     "description": "Welcome message shown on home screen"
   }
@@ -362,7 +361,7 @@ test/
 
 ```yaml
 name: flutter_tdd
-description: Nojom Flutter Application
+description: Flutter Application
 
 dependencies:
   flutter:
@@ -391,7 +390,6 @@ flutter:
   
   assets:
     - assets/images/
-    - assets/brand/images/
   
   fonts:
     - family: SFPro
@@ -425,8 +423,7 @@ flutter pub run build_runner build
 ```
 lib/core/di/injection.config.dart          # DI configuration
 lib/generated/intl/messages_*.dart         # Localization
-lib/res.dart                               # Resource constants
-lib/brand_res.dart                         # Brand resources
+lib/res.dart                               # App resources
 ```
 
 ---

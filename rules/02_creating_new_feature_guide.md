@@ -1,17 +1,17 @@
 # 🚀 Creating New Features - Complete Guide
 
-This comprehensive guide walks you through creating a new feature in the Nojom Flutter application, based on actual patterns from the existing codebase.
+This comprehensive guide walks you through creating a new feature in a Flutter application, based on actual patterns from the existing codebase.
 
 ## 🎯 **Current Architecture (Simplified)**
 
 **Status:** This guide has been updated to reflect the current simplified architecture (October 2025).
 
 **Key Changes:**
-- ✅ No `brand/` or `star/` subdirectories - features go directly in `lib/features/`
+- ✅ Features go directly in `lib/features/`
 - ✅ Controllers in separate files inside page folders (using `part of` pattern)
 - ✅ Simple widgets as methods in page state (not separate files unless complex)
 - ✅ Minimal global state (DeviceCubit only)
-- ✅ `ApiNames` instead of `BrandApiNames`
+- ✅ `ApiNames` for API endpoint constants
 
 **Live Example:** Check `lib/features/auth/` for a working reference implementation.
 
@@ -405,10 +405,10 @@ flutter pub run build_runner build --delete-conflicting-outputs
 ```dart
 import 'package:flutter_tdd/core/helpers/di.dart';
 import 'package:flutter_tdd/core/http/models/result.dart';
-import 'package:flutter_tdd/features/brand/my_feature/data/data_source/my_feature_data_source.dart';
-import 'package:flutter_tdd/features/brand/my_feature/data/models/item_model/item_model.dart';
-import 'package:flutter_tdd/features/brand/my_feature/domain/entity/create_item_params.dart';
-import 'package:flutter_tdd/features/brand/my_feature/domain/repositories/my_feature_repository.dart';
+import 'package:flutter_tdd/features/my_feature/data/data_source/my_feature_data_source.dart';
+import 'package:flutter_tdd/features/my_feature/data/models/item_model/item_model.dart';
+import 'package:flutter_tdd/features/my_feature/domain/entity/create_item_params.dart';
+import 'package:flutter_tdd/features/my_feature/domain/repositories/my_feature_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: MyFeatureRepository)
@@ -474,9 +474,9 @@ import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
 import 'package:flutter_tdd/core/theme/text/app_text_style.dart';
 import 'package:flutter_tdd/core/widgets/default_app_bar.dart';
 import 'package:flutter_tdd/core/routes/router_imports.gr.dart';
-import 'package:flutter_tdd/features/brand/my_feature/data/models/item_model/item_model.dart';
-import 'package:flutter_tdd/features/brand/my_feature/domain/entity/create_item_params.dart';
-import 'package:flutter_tdd/features/brand/my_feature/domain/repositories/my_feature_repository.dart';
+import 'package:flutter_tdd/features/my_feature/data/models/item_model/item_model.dart';
+import 'package:flutter_tdd/features/my_feature/domain/entity/create_item_params.dart';
+import 'package:flutter_tdd/features/my_feature/domain/repositories/my_feature_repository.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 // Import widgets
@@ -1034,7 +1034,7 @@ final myFeatureRoutes = [
 
 Add import:
 ```dart
-import 'package:flutter_tdd/features/brand/my_feature/presentation/manager/routes/my_feature_routes.dart';
+import 'package:flutter_tdd/features/my_feature/presentation/manager/routes/my_feature_routes.dart';
 ```
 
 **File:** `lib/core/routes/router.dart`
@@ -1495,5 +1495,5 @@ flutter pub run build_runner build --delete-conflicting-outputs
 
 ---
 
-**This guide is your complete reference for creating features in the Nojom app. Follow these patterns for consistent, maintainable, and high-quality code.**
+**This guide is your complete reference for creating features in any Flutter app. Follow these patterns for consistent, maintainable, and high-quality code.**
 

@@ -16,7 +16,7 @@ This comprehensive guide documents all reusable widgets in `/lib/core/widgets/`,
 8. [Date & Time Pickers](#date--time-pickers)
 9. [Formatters & Validators](#formatters--validators)
 10. [Utility Widgets](#utility-widgets)
-11. [Chat & Stream Widgets](#chat--stream-widgets)
+11. [Chat Widgets](#chat-widgets)
 12. [Animation Widgets](#animation-widgets)
 
 ---
@@ -1004,29 +1004,29 @@ GridView.builder(
 
 ---
 
-## 💬 **Chat & Stream Widgets**
+## 💬 **Chat Widgets**
 
-### **1. StreamMessageInput**
+### **1. MessageInput**
 
-**Purpose:** Stream chat message input
+**Purpose:** Chat message input
 
-**Location:** `lib/core/widgets/stream/stream_message_input.dart`
+**Location:** `lib/core/widgets/chat/message_input.dart`
 
 ---
 
-### **2. CustomStreamAudioRecorderButton**
+### **2. CustomAudioRecorderButton**
 
 **Purpose:** Audio recording button for chat
 
-**Location:** `lib/core/widgets/stream/custom_stream_audio_recorder_button.dart`
+**Location:** `lib/core/widgets/chat/custom_audio_recorder_button.dart`
 
 ---
 
-### **3. CustomStreamAudioRecorderController**
+### **3. CustomAudioRecorderController**
 
 **Purpose:** Audio recorder controller
 
-**Location:** `lib/core/widgets/stream/custom_stream_audio_recorder_controller.dart`
+**Location:** `lib/core/widgets/chat/custom_audio_recorder_controller.dart`
 
 ---
 
@@ -1034,7 +1034,7 @@ GridView.builder(
 
 **Purpose:** WhatsApp-style voice recording
 
-**Location:** `lib/core/widgets/stream/whatsapp_style_voice_recorder.dart`
+**Location:** `lib/core/widgets/chat/whatsapp_style_voice_recorder.dart`
 
 ---
 
@@ -1042,7 +1042,7 @@ GridView.builder(
 
 **Purpose:** Reaction icons for messages
 
-**Location:** `lib/core/widgets/stream/whatsapp_reaction_icons.dart`
+**Location:** `lib/core/widgets/chat/whatsapp_reaction_icons.dart`
 
 ---
 

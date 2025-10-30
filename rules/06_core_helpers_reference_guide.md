@@ -16,7 +16,7 @@ This comprehensive guide documents all helper files in `/lib/core/helpers/`, exp
 8. [Permissions](#permissions)
 9. [Storage & Preferences](#storage--preferences)
 10. [Dependency Injection](#dependency-injection)
-11. [Firebase Integration](#firebase-integration)
+11. [Core Services Integration](#core-services-integration)
 12. [Navigation & Routing](#navigation--routing)
 
 ---
@@ -498,13 +498,13 @@ final authRepo = getIt<AuthRepository>();
 
 ---
 
-## 🔥 **Firebase Integration**
+## 🔥 **Core Services Integration**
 
-### **19. firebase_analytics_helper.dart**
+### **19. analytics_helper.dart**
 
-**Purpose:** Firebase Analytics tracking.
+**Purpose:** Analytics tracking.
 
-**Location:** `lib/core/helpers/firebase_analytics_helper.dart`
+**Location:** `lib/core/helpers/analytics_helper.dart`
 
 **Functions:** Track user events and analytics.
 
@@ -512,7 +512,7 @@ final authRepo = getIt<AuthRepository>();
 
 ### **20. global_notification.dart**
 
-**Purpose:** Firebase Cloud Messaging / Push notifications.
+**Purpose:** Push notifications / Local notifications.
 
 **Location:** `lib/core/helpers/global_notification.dart`
 
@@ -866,7 +866,7 @@ await SecureStorage.setString('token', authToken);
 ✅ **Permissions (1)**: Permission handling  
 ✅ **Storage (1)**: Storage utilities  
 ✅ **Dependency Injection (2)**: DI setup and config  
-✅ **Firebase (2)**: Analytics, notifications  
+✅ **Core Services (2)**: Analytics, notifications  
 ✅ **Navigation (1)**: Navigator observer  
 ✅ **Additional (3)**: Recording, localization, providers  
 

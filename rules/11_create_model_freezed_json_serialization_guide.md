@@ -1,6 +1,6 @@
 # 🏗️ Freezed & JSON Serialization Model Guide
 
-This comprehensive guide explains how to create models using Freezed and JSON serialization in the Nojom Flutter application.
+This comprehensive guide explains how to create models using Freezed and JSON serialization in Flutter applications.
 
 ---
 
@@ -125,7 +125,7 @@ class LocalizedNameModel {
 
 ### **Step 1: Create Model File**
 
-**File:** `lib/features/star/auth/data/models/user_model/user_model.dart`
+**File:** `lib/features/auth/data/models/user_model/user_model.dart`
 
 ```dart
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -263,7 +263,7 @@ class CampaignModel with _$CampaignModel {
     required String timestamp,
     required String type,
     @JsonKey(name: "launch_date") required DateTime? launchDate,
-    @JsonKey(name: "brand_website") required String? brandWebsite,
+    @JsonKey(name: "website") required String? website,
     @JsonKey(name: "created_at") required String createdAt,
     @JsonKey(name: "updated_at") required String updatedAt,
     @JsonKey(name: "tax_rate") num? taxRate,
@@ -271,10 +271,10 @@ class CampaignModel with _$CampaignModel {
     @JsonKey(name: "listing_fee") required double? listingFee,
     @JsonKey(name: "client_name") required ClientName clientName,
     @JsonKey(name: "client_id") required int clientId,
-    @JsonKey(name: "star_details") required StarDetails starDetails,
-    @JsonKey(name: "notes_by_star") required String? notesByStar,
-    @JsonKey(name: "notes_by_brand") String? notesByBrand,
-    @JsonKey(name: "other_stars") required List<OtherStarModel>? otherStars,
+    @JsonKey(name: "user_details") required UserDetails userDetails,
+    @JsonKey(name: "notes_by_user") required String? notesByUser,
+    @JsonKey(name: "notes_by_admin") String? notesByAdmin,
+    @JsonKey(name: "other_users") required List<OtherUserModel>? otherUsers,
     @JsonKey(name: "campaign_timeline") required List<CampaignTimeline> campaignTimeline,
     @JsonKey(name: "social_platforms") required List<SocialPlatform> socialPlatforms,
   }) = _CampaignModel;
@@ -284,12 +284,12 @@ class CampaignModel with _$CampaignModel {
   
   // Status getters
   bool get isCanceled => getCampaignStatus == CampaignTypeEnum.canceled;
-  bool get isReleased => starDetails.isReleased == 1 || starDetails.isReleased == true;
+  bool get isReleased => userDetails.isReleased == 1 || userDetails.isReleased == true;
   bool get isDelivered => getCampaignStatus == CampaignTypeEnum.delivered;
   bool get isCompleted => getCampaignStatus == CampaignTypeEnum.completed;
   
   CampaignTypeEnum get getCampaignStatus {
-    switch (starDetails.reqStatus) {
+    switch (userDetails.reqStatus) {
       case "pending":
         return CampaignTypeEnum.requested;
       case "completed":
@@ -311,7 +311,7 @@ class CampaignModel with _$CampaignModel {
   }
   
   num get listingFeeBasedOnType {
-    if (starDetails.bypassFees == 1) {
+    if (userDetails.bypassFees == 1) {
       return (listingFee == 0.0) ? 0.15 : listingFee ?? 0.0;
     }
     return listingFee ?? 0;
@@ -323,11 +323,11 @@ class CampaignModel with _$CampaignModel {
 
 ```dart
 @unfreezed
-class BrandServiceModel with _$BrandServiceModel {
-  const BrandServiceModel._();
+class ServiceModel with _$ServiceModel {
+  const ServiceModel._();
   
   @JsonSerializable(explicitToJson: true)
-  factory BrandServiceModel({
+  factory ServiceModel({
     int? platformId,
     @JsonKey(name: "id") int? id,
     @JsonKey(name: "social_platform_type_id") int? socialPlatformTypeId,
@@ -349,14 +349,14 @@ class BrandServiceModel with _$BrandServiceModel {
     @JsonKey(name: "public_status", defaultValue: 1) num? publicStatus,
     @Default(false) bool selected,
     @Default(0) int quantity,
-  }) = Brand_ServiceModel;
+  }) = _ServiceModel;
   
-  factory BrandServiceModel.fromJson(Map<String, dynamic> json) =>
-      _$BrandServiceModelFromJson(json);
+  factory ServiceModel.fromJson(Map<String, dynamic> json) =>
+      _$ServiceModelFromJson(json);
   
   // Factory constructor for draft services
-  factory BrandServiceModel.forDraftService(DraftServiceModel model) {
-    return BrandServiceModel(
+  factory ServiceModel.forDraftService(DraftServiceModel model) {
+    return ServiceModel(
       id: model.id,
       platformId: model.platform?.id ?? 0,
       socialPlatformTypeId: model.socialPlatformOptionId ?? 0,
@@ -601,9 +601,9 @@ Models
 │   │   └── CampaignTimeline (@freezed)
 │   │
 │   └── Service Models
-│       ├── BrandServiceModel (@unfreezed)
+│       ├── ServiceModel (@unfreezed)
 │       ├── ServiceDetailsModel (@unfreezed)
-│       └── StarParticipation (@unfreezed)
+│       └── UserParticipation (@unfreezed)
 ```
 
 ---
@@ -623,7 +623,7 @@ flutter packages pub run build_runner watch
 flutter packages pub run build_runner build --delete-conflicting-outputs
 
 # Build specific files
-flutter packages pub run build_runner build --build-filter="lib/features/star/auth/data/models/**"
+flutter packages pub run build_runner build --build-filter="lib/features/auth/data/models/**"
 ```
 
 ### **Generated Files**
@@ -1092,7 +1092,7 @@ class EncryptedModel with _$EncryptedModel {
 ### **Example 2: Complex Model with Business Logic**
 
 ```dart
-// lib/features/star/auth/data/models/profile_model/profile_model.dart
+// lib/features/auth/data/models/profile_model/profile_model.dart
 @freezed
 class ProfileModel with _$ProfileModel {
   const ProfileModel._();
@@ -1126,13 +1126,13 @@ class ProfileModel with _$ProfileModel {
 ### **Example 3: Service Model with Calculations**
 
 ```dart
-// lib/features/brand/profile/data/models/service_model/service_model.dart
+// lib/features/profile/data/models/service_model/service_model.dart
 @unfreezed
-class BrandServiceModel with _$BrandServiceModel {
-  const BrandServiceModel._();
+class ServiceModel with _$ServiceModel {
+  const ServiceModel._();
   
   @JsonSerializable(explicitToJson: true)
-  factory BrandServiceModel({
+  factory ServiceModel({
     @JsonKey(name: "id") int? id,
     required String name,
     @JsonKey(name: "name_ar") required String nameAr,
@@ -1140,10 +1140,10 @@ class BrandServiceModel with _$BrandServiceModel {
     @JsonKey(name: "discount_rate") double? discountRate,
     @Default(false) bool selected,
     @Default(0) int quantity,
-  }) = Brand_ServiceModel;
-  
-  factory BrandServiceModel.fromJson(Map<String, dynamic> json) =>
-      _$BrandServiceModelFromJson(json);
+  }) = _ServiceModel;
+
+  factory ServiceModel.fromJson(Map<String, dynamic> json) =>
+      _$ServiceModelFromJson(json);
   
   // Price calculations
   String get getDiscountPrice {

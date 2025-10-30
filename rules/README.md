@@ -1,6 +1,6 @@
-# 📚 Nojom App Development Rules & Guidelines
+# 📚 Flutter App Development Rules & Guidelines
 
-Welcome to the comprehensive documentation for the Nojom Flutter application! This directory contains all the rules, guidelines, and best practices for developing features in the Nojom app.
+Welcome to the comprehensive documentation for Flutter application development! This directory contains all the rules, guidelines, and best practices for developing features in any Flutter app.
 
 ---
 
@@ -121,7 +121,7 @@ Documentation of 40+ utility helpers and their functions.
 - ✅ Permissions handling
 - ✅ Storage (PrefHelper for persistent data)
 - ✅ Network services (share, launch URLs, WhatsApp)
-- ✅ Firebase integration
+- ✅ Core services integration
 
 **Reference this** to find the right helper function.
 
@@ -168,10 +168,10 @@ Complete guide on BaseBloc and ObsValue patterns.
 
 ---
 
-### **🔔 Firebase & Integrations**
+### **🔔 Core Services & Integrations**
 
-#### **[09. Firebase Notifications Guide](09_firebase_notifications_guide.md)** (~1,600 lines)
-Complete guide on implementing Firebase Cloud Messaging.
+#### **[09. Core Services Guide](09_core_services_guide.md)** (~1,600 lines)
+Complete guide on implementing core app services.
 
 **Covers:**
 - ✅ Notification system architecture
@@ -182,7 +182,7 @@ Complete guide on implementing Firebase Cloud Messaging.
 - ✅ Handling notification taps
 - ✅ Background message handler
 - ✅ Token management
-- ✅ Stream Chat integration
+- ✅ Chat integration
 - ✅ Platform-specific setup
 - ✅ Testing notifications
 
@@ -235,7 +235,7 @@ Complete guide on using and managing assets (images, SVGs, fonts, icons).
 **Covers:**
 - ✅ Asset structure overview (671+ files)
 - ✅ Asset types (SVG, PNG, JPG, fonts)
-- ✅ Generated asset references (Res.dart, BrandRes.dart)
+- ✅ Generated asset references (Res.dart)
 - ✅ Using images (Image.asset, ImageWidget)
 - ✅ Using SVG assets (SvgPicture.asset, color customization)
 - ✅ Using fonts (AppTextStyle integration)
@@ -312,7 +312,7 @@ Quick reference for current project state after refactoring.
 5. **Week 2:** Read `05_core_widgets_reference_guide.md` - Explore available widgets
 6. **Week 2:** Read `06_core_helpers_reference_guide.md` - Discover helper utilities
 7. **Week 3:** Read `04_api_requests_dio_architecture.md` - Learn API integration
-8. **Week 3:** Read `09_firebase_notifications_guide.md` - Firebase integration
+8. **Week 3:** Read `09_core_services_guide.md` - Core services integration
 9. **Week 4:** Read `02_creating_new_feature_guide.md` - Build your first feature!
 
 ---
@@ -376,7 +376,7 @@ Focus on API and data:
 2. `04_api_requests_dio_architecture.md` - API
 3. `08_state_management_guide.md` - State
 4. `02_creating_new_feature_guide.md` - Build features
-5. `09_firebase_notifications_guide.md` - Push notifications
+5. `09_core_services_guide.md` - Core services
 
 ---
 
@@ -391,7 +391,7 @@ Complete understanding:
 5. `04_api_requests_dio_architecture.md` - API
 6. `05_core_widgets_reference_guide.md` - Widgets
 7. `06_core_helpers_reference_guide.md` - Helpers
-8. `09_firebase_notifications_guide.md` - Notifications
+8. `09_core_services_guide.md` - Core services
 9. `02_creating_new_feature_guide.md` - Feature development
 
 ---
@@ -645,7 +645,7 @@ AppSnackBar.showSuccessSnackBar(message)
 ### **External Documentation**
 - [Flutter Documentation](https://flutter.dev/docs)
 - [Dart Documentation](https://dart.dev/guides)
-- [Firebase Documentation](https://firebase.google.com/docs)
+- [Flutter Documentation](https://docs.flutter.dev)
 - [Auto Route](https://pub.dev/packages/auto_route)
 - [Freezed](https://pub.dev/packages/freezed)
 - [Injectable](https://pub.dev/packages/injectable)
@@ -668,7 +668,7 @@ When adding new patterns or components:
 
 ---
 
-## ✨ **Welcome to Nojom Development!**
+## ✨ **Welcome to Flutter Development!**
 
 These guides are designed to make you productive quickly while maintaining code quality and consistency. Don't hesitate to refer back to them frequently.
 
@@ -678,5 +678,5 @@ These guides are designed to make you productive quickly while maintaining code 
 
 **Last Updated:** October 2025
 **Version:** 2.0
-**Maintained by:** Nojom Development Team
+**Maintained by:** Flutter Development Team
 

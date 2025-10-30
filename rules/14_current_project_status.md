@@ -1,6 +1,6 @@
 # 📊 Current Project Status & Configuration
 
-Quick reference for the current state of the Nojom brand app after recent refactoring.
+Quick reference for the current state of the Flutter app after recent refactoring.
 
 ---
 
@@ -44,7 +44,7 @@ lib/features/
 ### **Pages Implemented**
 
 1. **Splash Page**
-   - Animated Nojom logo
+   - Animated app logo
    - Fade-in and scale animations
    - Auto-navigates to login after 3 seconds
    - Status bar: dark icons on light background
@@ -98,9 +98,9 @@ Currently **disabled** in `pubspec.yaml`:
 - ✅ SVG and PNG formats
 
 **Key Assets:**
-- `Res.nojomLogo` - Main Nojom logo
-- `Res.nojomSlogan` - Nojom slogan
-- `Res.nojomIcon` - App icon
+- `Res.appLogo` - Main app logo
+- `Res.appSlogan` - App slogan
+- `Res.appIcon` - App icon
 
 ---
 
@@ -176,10 +176,10 @@ List<AutoRoute> authRoutes = [
 - ✅ `flutter_easyloading` - Loading dialogs
 - ✅ `fluttertoast` - Toast messages
 
-### **Firebase**
-- ✅ `firebase_core`
-- ✅ `firebase_messaging`
-- ✅ `firebase_crashlytics`
+### **Core Services**
+- ✅ Core app services
+- ✅ Local notifications
+- ✅ Error handling
 
 ---
 

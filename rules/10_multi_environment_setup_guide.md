@@ -1,6 +1,6 @@
 # 🌍 Multi-Environment Setup Guide
 
-This comprehensive guide explains how to implement and manage multiple environments (Development, Staging, Production) in the Nojom Flutter application.
+This comprehensive guide explains how to implement and manage multiple environments (Development, Staging, Production) in Flutter applications.
 
 ---
 
@@ -23,7 +23,7 @@ This comprehensive guide explains how to implement and manage multiple environme
 
 ### **Supported Environments**
 
-The Nojom app supports **multiple environments**:
+Flutter apps support **multiple environments**:
 
 ```
 Environments
@@ -119,8 +119,8 @@ enum AppEnvType {
 ```dart
 abstract class IEnvironmentConfigReader {
   // Base URLs
-  String getStarBaseUrl();
-  String getBrandBaseUrl();
+  String getUserBaseUrl();
+  String getAdminBaseUrl();
   
   // App Info
   String getAppNameAr();
@@ -139,7 +139,7 @@ abstract class IEnvironmentConfigReader {
   String getAnonymousGrantType();
   
   // Third-party services
-  String getStreamKey();
+  String getChatKey();
   String getWebsiteUrl();
   String getAuth0Domain();
   String getAuth0ClientId();
@@ -174,12 +174,12 @@ class FlutterEnvironmentConfigReader implements IEnvironmentConfigReader {
 
   // Read from dart-define values
   @override
-  String getStarBaseUrl() => 
-      const String.fromEnvironment('APP_BASE_URL_STAR');
+  String getUserBaseUrl() => 
+      const String.fromEnvironment('APP_BASE_URL_USER');
 
   @override
-  String getBrandBaseUrl() => 
-      const String.fromEnvironment('APP_BASE_URL_BRAND');
+  String getAdminBaseUrl() => 
+      const String.fromEnvironment('APP_BASE_URL_ADMIN');
 
   @override
   String getAppNameAr() => 
@@ -202,8 +202,8 @@ class FlutterEnvironmentConfigReader implements IEnvironmentConfigReader {
       const String.fromEnvironment('APPLE_APP_ID');
 
   @override
-  String getStreamKey() => 
-      const String.fromEnvironment('GET_STREAM_KEY');
+  String getChatKey() => 
+      const String.fromEnvironment('GET_CHAT_KEY');
 
   @override
   String getWebsiteUrl() => 
@@ -256,16 +256,16 @@ Create folder: `.run/json/`
 ```json
 {
   "APP_ENV_NAME": "dev",
-  "APP_BASE_URL_STAR": "https://dev-api-star.example.com/api/v1/",
-  "APP_BASE_URL_BRAND": "https://dev-api-brand.example.com/api/v1/",
-  "APP_APP_NAME_EN": "Nojom Dev",
-  "APP_APP_NAME_AR": "نجوم تطوير",
-  "APP_LOCAL_LOGO": "assets/brand/images/logo_dev.png",
-  "ANDROID_APP_ID": "com.nojom.app.dev",
-  "APPLE_APP_ID": "com.nojom.app.dev",
-  "GET_STREAM_KEY": "dev_stream_api_key_here",
-  "WEBSITE_URL": "https://dev.nojom.com",
-  "AUTH0_DOMAIN": "dev-nojom.auth0.com",
+  "APP_BASE_URL_USER": "https://dev-api-user.example.com/api/v1/",
+  "APP_BASE_URL_ADMIN": "https://dev-api-admin.example.com/api/v1/",
+  "APP_APP_NAME_EN": "MyApp Dev",
+  "APP_APP_NAME_AR": "تطبيق تطوير",
+  "APP_LOCAL_LOGO": "assets/images/logo_dev.png",
+  "ANDROID_APP_ID": "com.myapp.dev",
+  "APPLE_APP_ID": "com.myapp.dev",
+  "GET_CHAT_KEY": "dev_chat_api_key_here",
+  "WEBSITE_URL": "https://dev.myapp.com",
+  "AUTH0_DOMAIN": "dev-myapp.auth0.com",
   "AUTH0_CLIENT_ID": "dev_auth0_client_id",
   "PAYMENT_KEY": "dev_payment_key",
   "PAYMENT_MERCHANT_ID": "dev_merchant_id",
@@ -291,7 +291,7 @@ Create folder: `.run/json/`
   "APP_LOCAL_LOGO": "assets/brand/images/logo_stage.png",
   "ANDROID_APP_ID": "com.nojom.app.stage",
   "APPLE_APP_ID": "com.nojom.app.stage",
-  "GET_STREAM_KEY": "stage_stream_api_key_here",
+  "GET_CHAT_KEY": "stage_chat_api_key_here",
   "WEBSITE_URL": "https://stage.nojom.com",
   "AUTH0_DOMAIN": "stage-nojom.auth0.com",
   "AUTH0_CLIENT_ID": "stage_auth0_client_id",
@@ -319,7 +319,7 @@ Create folder: `.run/json/`
   "APP_LOCAL_LOGO": "assets/brand/images/logo_prod.png",
   "ANDROID_APP_ID": "com.nojom.app",
   "APPLE_APP_ID": "com.nojom.app",
-  "GET_STREAM_KEY": "prod_stream_api_key_here",
+  "GET_CHAT_KEY": "prod_chat_api_key_here",
   "WEBSITE_URL": "https://nojom.com",
   "AUTH0_DOMAIN": "nojom.auth0.com",
   "AUTH0_CLIENT_ID": "prod_auth0_client_id",
@@ -1311,7 +1311,7 @@ end
 - ✅ API URLs (Star & Brand)
 - ✅ App names (EN & AR)
 - ✅ App IDs (Android & iOS)
-- ✅ API keys (Stream, Auth0, Payment, Sentry)
+- ✅ API keys (Chat, Auth0, Payment, Error tracking)
 - ✅ Client credentials
 - ✅ Website URLs
 - ✅ Firebase configurations

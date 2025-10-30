@@ -1,6 +1,6 @@
 # 🛣️ Auto Route Navigation Guide
 
-This guide covers the mandatory use of Auto Route for navigation in the Nojom Flutter application.
+This guide covers the mandatory use of Auto Route for navigation in Flutter applications.
 
 ## 🎯 **Auto Route Rule**
 
@@ -644,10 +644,10 @@ Before submitting code, verify:
 
 ---
 
-**Remember: Auto Route is MANDATORY for all navigation in the Nojom application. No exceptions.**
+**Remember: Auto Route is MANDATORY for all navigation in Flutter applications. No exceptions.**
 
 ---
 
 **Last Updated:** December 2024  
 **Version:** 1.0  
-**Maintained by:** Nojom Development Team
+**Maintained by:** Flutter Development Team

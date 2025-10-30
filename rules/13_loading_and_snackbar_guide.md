@@ -1,6 +1,6 @@
 # 🔄 Loading & SnackBar Services Guide
 
-Complete guide on using `LoadingHelper` and `AppSnackBar` for loading states and user notifications in the Nojom app.
+Complete guide on using `LoadingHelper` and `AppSnackBar` for loading states and user notifications in Flutter apps.
 
 ---
 
@@ -62,7 +62,7 @@ void showLoadingDialog({
 **Features:**
 - Automatic timeout after 15 seconds
 - Prevents multiple dialogs from showing simultaneously
-- Custom Nojom-branded loading animation
+- Custom branded loading animation
 - Blur effect backdrop
 
 **Example:**
@@ -888,5 +888,5 @@ try {
 
 **Last Updated:** October 2025  
 **Version:** 1.0  
-**Maintained by:** Nojom Development Team
+**Maintained by:** Flutter Development Team
 

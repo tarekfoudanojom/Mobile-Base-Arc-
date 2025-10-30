@@ -756,7 +756,7 @@ class AuthInterceptor extends Interceptor {
 
 For debugging HTTP requests (shows Alice inspector in debug mode)
 
-### **3. Amplitude Action Interceptor**
+### **3. Analytics Action Interceptor**
 
 Tracks API calls for analytics
 
