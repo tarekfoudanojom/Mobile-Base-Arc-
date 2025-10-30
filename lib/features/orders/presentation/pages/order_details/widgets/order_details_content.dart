@@ -9,7 +9,7 @@ import 'package:flutter_tdd/features/orders/presentation/pages/order_details/wid
 import 'package:flutter_tdd/features/orders/presentation/pages/order_details/widgets/order_details_actions.dart';
 import 'package:flutter_tdd/features/orders/presentation/pages/order_details/widgets/order_status_chip.dart';
 
-class OrderDetailsContent extends StatelessWidget {
+class OrderDetailsContent extends StatefulWidget {
   final OrderModel order;
   final OrderDetailsController controller;
 
@@ -20,15 +20,36 @@ class OrderDetailsContent extends StatelessWidget {
   });
 
   @override
+  State<OrderDetailsContent> createState() => _OrderDetailsContentState();
+}
+
+class _OrderDetailsContentState extends State<OrderDetailsContent> {
+  late ScrollController _scrollController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return CupertinoScrollbar(
+      controller: _scrollController,
       child: SingleChildScrollView(
+        controller: _scrollController,
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Header Section
-            OrderDetailsHeader(order: order),
+            OrderDetailsHeader(order: widget.order),
             
             const SizedBox(height: 24),
             
@@ -55,7 +76,7 @@ class OrderDetailsContent extends StatelessWidget {
                     style: AppTextStyle.s16_w600(color: context.colors.textPrimary),
                   ),
                   const SizedBox(height: 12),
-                  OrderStatusChip(status: order.status),
+                  OrderStatusChip(status: widget.order.status),
                 ],
               ),
             ),
@@ -63,17 +84,17 @@ class OrderDetailsContent extends StatelessWidget {
             const SizedBox(height: 16),
             
             // Order Information Section
-            OrderDetailsInfo(order: order),
+            OrderDetailsInfo(order: widget.order),
             
             const SizedBox(height: 16),
             
             // Actions Section
             ObsValueConsumer<bool>(
-              observable: controller.isLoadingObs,
+              observable: widget.controller.isLoadingObs,
               builder: (context, isLoading) {
                 return OrderDetailsActions(
-                  order: order,
-                  controller: controller,
+                  order: widget.order,
+                  controller: widget.controller,
                   isLoading: isLoading,
                 );
               },

@@ -8,8 +8,8 @@ import 'package:flutter_tdd/core/localization/translate.dart';
 import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
 import 'package:flutter_tdd/core/theme/text/app_text_style.dart';
 import 'package:flutter_tdd/core/routes/router_imports.gr.dart';
+import 'package:flutter_tdd/features/orders/presentation/pages/home/tabs/profile_tab/widgets/settings_section_widget.dart';
 import 'widgets/settings_profile_header_widget.dart';
-import 'widgets/settings_section_widget.dart';
 import 'widgets/settings_language_picker_widget.dart';
 
 part 'profile_tab_page.dart';

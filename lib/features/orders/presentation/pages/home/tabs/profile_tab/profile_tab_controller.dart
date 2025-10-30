@@ -51,5 +51,30 @@ class ProfileTabController {
         break;
     }
   }
+
+  /// Change app theme and navigate to home page
+  void changeThemeAndNavigate(BuildContext context, AdaptiveThemeMode themeMode) {
+    // Update DeviceCubit
+    context.read<DeviceCubit>().updateThemeMode(themeMode);
+    
+    // Update AdaptiveTheme
+    switch (themeMode) {
+      case AdaptiveThemeMode.light:
+        AdaptiveTheme.of(context).setLight();
+        break;
+      case AdaptiveThemeMode.dark:
+        AdaptiveTheme.of(context).setDark();
+        break;
+      case AdaptiveThemeMode.system:
+        AdaptiveTheme.of(context).setSystem();
+        break;
+    }
+    
+    // Close any open modals first
+    Navigator.of(context).popUntil((route) => route.isFirst);
+    
+    // Navigate to home page using AutoRoute
+    context.router.push(const HomeRoute());
+  }
 }
 

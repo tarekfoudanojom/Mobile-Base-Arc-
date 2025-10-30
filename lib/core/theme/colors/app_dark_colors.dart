@@ -4,429 +4,436 @@ import 'package:flutter_tdd/core/theme/colors/app_colors.dart';
 
 class AppDarkColors extends AppColors {
   @override
-  Color get primary => const Color(0xFF004eee);
+  Color get primary => const Color(0xFF5B7FFF); // Brighter blue for dark theme
 
   @override
-  Color get secondary => const Color(0xff818181);
+  Color get secondary => const Color(0xFF9E9E9E); // Lighter gray for dark theme
 
   @override
-  Color get white => CupertinoColors.white;
+  Color get white => const Color(0xFF1A1A1A); // Dark background instead of white
 
   @override
-  Color get background1 => const Color(0xFFF5F5F5);
+  Color get background1 => const Color(0xFF121212); // Dark background
 
   @override
-  Color get btnBackgroundGrey => const Color(0xffededef);
+  Color get btnBackgroundGrey => const Color(0xFF2C2C2E); // Dark gray for buttons
 
   @override
-  Color get background2 => Colors.white;
+  Color get background2 => const Color(0xFF1C1C1E); // Slightly lighter dark background
 
   @override
-  Color backgroundGray = const Color(0xffF5F5F5);
+  Color backgroundGray = const Color(0xFF1A1A1A); // Dark gray background
 
   @override
-  Color get appBarColor => const Color(0xFFF9656B);
+  Color get appBarColor => const Color(0xFF2C2C2E); // Dark app bar
 
   @override
-  Color get black => CupertinoColors.black;
+  Color get black => CupertinoColors.white; // White text on dark theme
 
   @override
-  Color get blackOpacity => Colors.black54;
+  Color get blackOpacity => Colors.white.withValues(alpha: .54); // White with opacity
 
   @override
-  Color get blackOpacity87 => Colors.black87.withValues(alpha: .7);
+  Color get blackOpacity87 => Colors.white.withValues(alpha: .7); // White with opacity
 
   @override
-  Color get greyWhite => Colors.grey.withValues(alpha: .2);
+  Color get greyWhite => Colors.grey.withValues(alpha: .3); // Slightly more visible gray
 
   @override
-  Color get disableGray => const Color(0xFFCBCBCB);
+  Color get disableGray => const Color(0xFF4A4A4A); // Darker gray for disabled
 
   @override
-  Color get slightBlueGray => const Color(0xFFE5E5EA);
+  Color get slightBlueGray => const Color(0xFF3A3A3C); // Dark blue-gray
 
   @override
-  Color get textColor => Colors.black.withValues(alpha: .66);
+  Color get textColor => Colors.white.withValues(alpha: .87); // White text with opacity
 
   @override
-  Color get textGaryColor => const Color(0xff3C3C43).withValues(alpha: .5);
+  Color get textGaryColor => const Color(0xFF8E8E93).withValues(alpha: .6); // Light gray text
 
   @override
-  Color get hintGaryColor => CupertinoColors.systemGrey3;
+  Color get hintGaryColor => const Color(0xFF8E8E93); // Light gray for hints
 
   @override
-  Color get inputFillColor => const Color(0xFFF5F5F5);
+  Color get inputFillColor => const Color(0xFF2C2C2E); // Dark input background
 
   @override
-  Color get dotColor => const Color(0xFF020814);
+  Color get dotColor => const Color(0xFFFFFFFF); // White dots on dark
 
   @override
-  Color get slightGray => const Color(0xFFAEAEB2);
+  Color get slightGray => const Color(0xFF8E8E93); // Light gray
 
   @override
-  Color get red => const Color(0xFFFF3B30);
+  Color get red => const Color(0xFFFF453A); // System red for dark theme
 
   @override
-  Color get lightGray => const Color(0xFFAAAAAC);
+  Color get lightGray => const Color(0xFF6D6D70); // Medium gray
 
   @override
-  Color get grayWhite => const Color(0xFFD1D1D6);
+  Color get grayWhite => const Color(0xFF48484A); // Dark gray
 
   @override
-  Color get blue => CupertinoColors.link.highContrastColor;
+  Color get blue => const Color(0xFF0A84FF); // System blue for dark theme
 
   @override
-  Color get slightDeepGreen => const Color(0xFF34A853);
+  Color get slightDeepGreen => const Color(0xFF30D158); // System green for dark theme
 
   @override
-  Color get lightWhite => const Color(0xFFEDEDEE);
+  Color get lightWhite => const Color(0xFF2C2C2E); // Dark gray instead of light white
 
   @override
-  Color get feedBackColor => const Color(0xFFE6E8FA);
+  Color get feedBackColor => const Color(0xFF1C1C1E); // Dark feedback background
 
   @override
-  Color get arrowDownColor => const Color(0xFF8E8E93);
+  Color get arrowDownColor => const Color(0xFF8E8E93); // Light gray for arrows
 
   @override
-  Color get closeIconColor => const Color(0xFFB0B0B3);
+  Color get closeIconColor => const Color(0xFF8E8E93); // Light gray for close icon
 
   @override
-  Color get deepSlightGray => const Color(0xFFB0B0B3);
+  Color get deepSlightGray => const Color(0xFF6D6D70); // Medium gray
 
   @override
-  Color get green => const Color(0xFF039855);
+  Color get green => const Color(0xFF30D158); // System green
 
   @override
-  Color get textGrayOpacity => CupertinoColors.systemGrey2;
+  Color get textGrayOpacity => const Color(0xFF8E8E93); // Light gray
 
   @override
-  Color get popMenuColor => const Color(0xffF5F6F6);
+  Color get popMenuColor => const Color(0xFF2C2C2E); // Dark popup menu
 
   @override
-  Color get slightBlue => const Color(0xff84ABF5);
+  Color get slightBlue => const Color(0xFF0A84FF); // System blue
 
   @override
-  Color get dotFrameColor => const Color(0xffC7C7CC);
+  Color get dotFrameColor => const Color(0xFF48484A); // Dark gray frame
 
   @override
-  Color get slightRed => const Color(0xffFFF4E5);
+  Color get slightRed => const Color(0xFF2C1B1A); // Dark red background
 
   @override
-  Color get activeColor => const Color(0xff21C886);
+  Color get activeColor => const Color(0xFF30D158); // System green for active
 
   @override
-  Color get slightGrey => const Color(0xff8A8A8E);
+  Color get slightGrey => const Color(0xFF6D6D70); // Medium gray
 
   @override
-  Color get cardBgColor => const Color(0xffEBEBF0);
+  Color get cardBgColor => const Color(0xFF2C2C2E); // Dark card background
 
   @override
-  Color get disabledCardColor => const Color(0xffF1F1F1);
+  Color get disabledCardColor => const Color(0xFF1C1C1E); // Darker disabled card
 
   @override
-  Color get textGreyColor => CupertinoColors.systemGrey2;
+  Color get textGreyColor => const Color(0xFF8E8E93); // Light gray text
 
   @override
-  Color get textCupertinoSystemGreyColor => CupertinoColors.systemGrey;
+  Color get textCupertinoSystemGreyColor => const Color(0xFF8E8E93); // System gray
 
   @override
-  Color get lightRed => const Color(0xffFADCD9);
+  Color get lightRed => const Color(0xFF2C1B1A); // Dark red background
 
   @override
-  Color get messageSent => const Color(0xffD1E0FD);
+  Color get messageSent => const Color(0xFF1C1C1E); // Dark message background
 
   @override
-  Color get fileColor => const Color(0xffD1E0FD);
+  Color get fileColor => const Color(0xFF1C1C1E); // Dark file background
 
   @override
-  Color get whiteOpacity => const Color(0xffF2F2F7);
+  Color get whiteOpacity => const Color(0xFF1C1C1E); // Dark with opacity
 
   @override
-  Color get noFilesColor => const Color(0xffACACAE);
+  Color get noFilesColor => const Color(0xFF6D6D70); // Medium gray
 
   @override
-  Color get blueGray => const Color(0xffE8EFFF);
+  Color get blueGray => const Color(0xFF1C1C1E); // Dark blue-gray
 
   @override
-  Color get orange => const Color(0xffFFA150);
+  Color get orange => const Color(0xFFFF9F0A); // System orange for dark theme
 
   @override
-  Color get mintGreenColor => const Color(0xff009498);
+  Color get mintGreenColor => const Color(0xFF30D158); // System green
 
   @override
-  Color get yellow => const Color(0xffFFD000);
+  Color get yellow => const Color(0xFFFFD60A); // System yellow for dark theme
 
   @override
-  Color get grey => const Color(0xff919193);
+  Color get grey => const Color(0xFF8E8E93); // Light gray
 
   @override
-  Color get lightGrey => const Color(0xffCCCCCF);
+  Color get keyboard => const Color(0xFF8E8E93); // Light gray for keyboard
 
   @override
-  Color get greyOpacity => Colors.grey.withValues(alpha: .7);
+  Color get lightGrey => const Color(0xFF6D6D70); // Medium gray
 
   @override
-  Color get gold => const Color(0xffFFD700);
+  Color get greyOpacity => Colors.grey.withValues(alpha: .3); // Gray with opacity
 
   @override
-  Color silverColor = const Color(0xFF9BA5B7);
+  Color get gold => const Color(0xFFFFD700); // Gold stays the same
 
   @override
-  Color checkIconColor = const Color(0xFF479F53);
+  Color silverColor = const Color(0xFF8E8E93); // Light gray for silver
 
   @override
-  Color releaseNonActiveColor = const Color(0xFFEEECEE).withValues(alpha: .6);
+  Color checkIconColor = const Color(0xFF30D158); // System green
 
   @override
-  Color stepsIconColor = const Color(0xFF9B98A0);
+  Color releaseNonActiveColor = const Color(0xFF2C2C2E).withValues(alpha: .6); // Dark with opacity
 
   @override
-  Color separatorColor = const Color(0xFFC5C5C6);
+  Color stepsIconColor = const Color(0xFF6D6D70); // Medium gray
 
   @override
-  Color mystic = const Color(0xFFF7F5F8);
+  Color separatorColor = const Color(0xFF48484A); // Dark separator
 
   @override
-  Color darkRed = const Color(0xFFdd2d1d);
+  Color mystic = const Color(0xFF1C1C1E); // Dark mystic
 
   @override
-  Color mistGray = const Color(0xFFEFEDF0);
+  Color darkRed = const Color(0xFFFF453A); // System red
 
   @override
-  Color textPrimary = const Color(0xFF181D27);
+  Color mistGray = const Color(0xFF2C2C2E); // Dark mist gray
 
   @override
-  Color textTertiary = const Color(0xFF535862);
+  Color textPrimary = const Color(0xFFFFFFFF); // White text
 
   @override
-  Color whiteSmoke = const Color(0xFFF5F5F5);
+  Color textTertiary = const Color(0xFF8E8E93); // Light gray text
 
   @override
-  Color steelGray = const Color(0xFFA4A7AE);
+  Color whiteSmoke = const Color(0xFF1A1A1A); // Dark background
 
   @override
-  Color ashGray = const Color(0xff909090);
+  Color steelGray = const Color(0xFF6D6D70); // Medium gray
 
   @override
-  Color softSilver = const Color(0xFFD5D7DA);
+  Color ashGray = const Color(0xFF8E8E93); // Light gray
 
   @override
-  Color mistyGray = const Color(0xFFE9EAEB);
+  Color softSilver = const Color(0xFF48484A); // Dark silver
 
   @override
-  Color slateGray = const Color(0xFF414651);
+  Color mistyGray = const Color(0xFF2C2C2E); // Dark misty gray
 
   @override
-  Color iceBlue = const Color(0xFFEFF4FF);
+  Color slateGray = const Color(0xFF8E8E93); // Light slate gray
 
   @override
-  Color softGray = const Color(0xFFC2C2C5);
+  Color iceBlue = const Color(0xFF1C1C1E); // Dark ice blue
 
   @override
-  Color snowWhite = const Color(0xFFFAFAFA);
+  Color softGray = const Color(0xFF48484A); // Dark soft gray
 
   @override
-  Color smokeyGray = const Color(0xFFDFDFEB);
+  Color snowWhite = const Color(0xFF1A1A1A); // Dark background
 
   @override
-  Color lightSilver = const Color(0xFFc0c0c2);
+  Color smokeyGray = const Color(0xFF2C2C2E); // Dark smokey gray
 
   @override
-  Color lightPink = const Color(0xFFfff5f5);
+  Color lightSilver = const Color(0xFF6D6D70); // Medium gray
 
   @override
-  Color mutedGray = Colors.black87.withValues(alpha: .6);
+  Color lightPink = const Color(0xFF2C1B1A); // Dark pink background
 
   @override
-  Color softSkyBlue = const Color(0xFFf0f4ff);
+  Color mutedGray = Colors.white.withValues(alpha: .6); // White with opacity
 
   @override
-  Color softBlue = const Color(0xFFedf4ff);
+  Color softSkyBlue = const Color(0xFF1C1C1E); // Dark sky blue
 
   @override
-  Color offWhite = const Color(0xFFFDFDFD);
+  Color softBlue = const Color(0xFF1C1C1E); // Dark blue
 
   @override
-  Color mistGray2 = const Color(0xFFBBBBC1);
+  Color offWhite = const Color(0xFF1A1A1A); // Dark background
 
   @override
-  Color ashGray2 = const Color(0xFF717680);
+  Color get red2 => const Color(0xFFFF453A); // System red
 
   @override
-  Color cloudGray = const Color(0xFFedeef0);
+  Color mistGray2 = const Color(0xFF2C2C2E); // Dark mist gray
 
   @override
-  Color dustGray = const Color(0xFF716F79);
+  Color ashGray2 = const Color(0xFF8E8E93); // Light gray
 
   @override
-  Color softLilac = const Color(0xFFC8BFCB);
+  Color cloudGray = const Color(0xFF2C2C2E); // Dark cloud gray
 
   @override
-  Color blushPink = const Color(0xffF9ECF3);
+  Color dustGray = const Color(0xFF48484A); // Dark dust gray
 
   @override
-  Color semiTransparent = const Color.fromRGBO(24, 29, 39, 0.5);
+  Color softLilac = const Color(0xFF2C2C2E); // Dark lilac
 
   @override
-  Color lightIceBlue = const Color(0xFFF2F7FF);
+  Color blushPink = const Color(0xFF2C1B1A); // Dark pink
 
   @override
-  Color get red2 => const Color(0xffb2343e);
+  Color semiTransparent = const Color(0x80000000); // Semi-transparent black
 
   @override
-  Color get greyDark => const Color(0xff79787e);
+  Color lightIceBlue = const Color(0xFF1C1C1E); // Dark ice blue
 
+  // Favorites feature colors
   @override
-  Color get appColorBlue => const Color(0xFF004eee);
-
-  @override
-  Color get darkRedText => const Color(0xFFB42318); // Dark Red
-
-  @override
-  Color get lightRedBackground => const Color(0xFFFECDCA); // Light Red
-
-  @override
-  Color get paleRed => const Color(0xFFFEF3F2); // Very Light/Pale Red
-
-  @override
-  Color get primaryRed => const Color(0xFFD92D20); // Primary Red
-
-  @override
-  Color get textSecondary => const Color(0xFF717680); // Secondary text color
-
-  @override
-  Color get successLight => const Color(0xFFECFCF2); // Success light background
-
-  @override
-  Color get successBorder => const Color(0xFFABEFC6); // Success border
-
-  @override
-  Color get successText => const Color(0xFF067647); // Success text
-
-  @override
-  Color get warningLight => const Color(0xFFFFFAEB); // Warning light background
-
-  @override
-  Color get warningBorder => const Color(0xFFFEDF89); // Warning border
-
-  @override
-  Color get warningText => const Color(0xFFB54708); // Warning text
-
-  @override
-  Color get errorLight => const Color(0xFFFEF3F2); // Error light background
-
-  @override
-  Color get errorBorder => const Color(0xFFFECDCA); // Error border
-
-  @override
-  Color get errorText => const Color(0xFFB42318); // Error text
-
-  @override
-  Color get success => const Color(0xFF17B26A); // Success color
-
-  @override
-  Color get warning => const Color(0xFFF79009); // Warning color
-
-  @override
-  Color get error => const Color(0xFFF04438); // Error color
-
-  @override
-  Color get divider => const Color(0xFFE9EAEB); // Divider color
-  @override
-  Color get backgroundChat => const Color(0xFFF6F6F6);
-
-  @override
-  Color boldBlue = const Color(0xFF155EEF);
-
-  @override
-  Color get greenChatMsg => const Color(0xffDCF8C7);
-
-  @override
-  Color get lightGray2 => const Color(0xffE9EAEB);
-
-  @override
-  Color get backGround1 => const Color(0xFFF5F5F5);
-
-  @override
-  Color get disabledColor => const Color(0xffF5F5F5);
-
-  @override
-  Color get pastelBlue => const Color(0xFFB2CCFF);
-  @override
-  Color get primaryBlue => const Color(0xFF2970FF);
-  @override
-  Color get deepBlue => const Color(0xFF004EEB);
-
-  @override
-  Color get strongRed => const Color(0xFFB42318);
-  @override
-  Color get alertRed => const Color(0xFFF04438);
-  @override
-  Color get softRed => const Color(0xFFFEDCCA);
-
-  @override
-  Color get primaryGreen => const Color(0xFF067647);
-  @override
-  Color get mediumGreen => const Color(0xFF17B26A);
-  @override
-  Color get lightGreen => const Color(0xFFABEFC6);
-  @override
-  Color get paleGreen => const Color(0xFFECFDF3);
-
-  @override
-  Color get deepPink => const Color(0xFFDD2590);
-  @override
-  Color get mediumGray => const Color(0xFF929292);
-
-  @override
-  Color get steelBlueGray => const Color(0xFF475467);
-
-  @override
-  Color get whatsappFooterColor => const Color(0xFFD5D7DA);
-
-  @override
-  Color get keyboard => const Color(0xFF676767);
-
-  // ECFDF3
-  @override
-  Color lightMintGreen = const Color(0xFFECFDF3);
-
-// 17B26A
-  @override
-  Color emeraldGreen = const Color(0xFF17B26A);
-
-// 067647
-  @override
-  Color darkGreen = const Color(0xFF067647);
-
-  // Favorites feature colors (same as light theme for now)
-  @override
-  Color get favoriteSelectedBackground => const Color(0xFFEFF4FF);
+  Color get favoriteSelectedBackground => const Color(0xFF0A84FF); // System blue
   
   @override
-  Color get favoriteSelectedBorder => const Color(0xFF83ADFF);
+  Color get favoriteSelectedBorder => const Color(0xFF0A84FF); // System blue
   
   @override
-  Color get favoriteSelectedText => const Color(0xFF004EEA);
+  Color get favoriteSelectedText => const Color(0xFFFFFFFF); // White text
   
   @override
-  Color get favoriteIconGray => const Color(0xFF717680);
+  Color get favoriteIconGray => const Color(0xFF8E8E93); // Light gray
   
   @override
-  Color get favoriteBorderGray => const Color(0xFFE9EAEB);
+  Color get favoriteBorderGray => const Color(0xFF48484A); // Dark gray
   
   @override
-  Color get favoriteButtonBlue => const Color(0xFF528BFF);
+  Color get favoriteButtonBlue => const Color(0xFF0A84FF); // System blue
   
   @override
-  Color get favoriteFocusBorder => const Color(0xFF2970FE);
+  Color get favoriteFocusBorder => const Color(0xFF0A84FF); // System blue
   
   @override
-  Color get favoriteShimmerLight => Colors.grey.withValues(alpha: 0.1);
+  Color get favoriteShimmerLight => const Color(0xFF2C2C2E); // Dark shimmer
   
   @override
-  Color get favoriteShimmerMedium => Colors.grey.withValues(alpha: 0.3);
+  Color get favoriteShimmerMedium => const Color(0xFF48484A); // Medium shimmer
   
   @override
-  Color get favoriteOverlayDark => Colors.black.withValues(alpha: 0.6);
+  Color get favoriteOverlayDark => const Color(0x80000000); // Dark overlay
+
+
+  @override
+  Color get greyDark => const Color(0xFF48484A); // Dark gray
+
+  @override
+  Color get appColorBlue => const Color(0xFF0A84FF); // System blue
+
+  @override
+  Color get darkRedText => const Color(0xFFFF453A); // System red
+
+  @override
+  Color get lightRedBackground => const Color(0xFF2C1B1A); // Dark red background
+
+  @override
+  Color get paleRed => const Color(0xFF2C1B1A); // Dark pale red
+
+  @override
+  Color get primaryRed => const Color(0xFFFF453A); // System red
+
+  @override
+  Color get textSecondary => const Color(0xFF8E8E93); // Light gray text
+
+  @override
+  Color get successLight => const Color(0xFF1C2C1A); // Dark green background
+
+  @override
+  Color get successBorder => const Color(0xFF30D158); // System green
+
+  @override
+  Color get successText => const Color(0xFF30D158); // System green
+
+  @override
+  Color get warningLight => const Color(0xFF2C2A1A); // Dark yellow background
+
+  @override
+  Color get warningBorder => const Color(0xFFFFD60A); // System yellow
+
+  @override
+  Color get warningText => const Color(0xFFFFD60A); // System yellow
+
+  @override
+  Color get errorLight => const Color(0xFF2C1B1A); // Dark red background
+
+  @override
+  Color get errorBorder => const Color(0xFFFF453A); // System red
+
+  @override
+  Color get errorText => const Color(0xFFFF453A); // System red
+
+  @override
+  Color get success => const Color(0xFF30D158); // System green
+
+  @override
+  Color get warning => const Color(0xFFFFD60A); // System yellow
+
+  @override
+  Color get error => const Color(0xFFFF453A); // System red
+
+  @override
+  Color get divider => const Color(0xFF48484A); // Dark divider
+
+  @override
+  Color get backgroundChat => const Color(0xFF1C1C1E); // Dark chat background
+
+  @override
+  Color get boldBlue => const Color(0xFF0A84FF); // System blue
+
+  @override
+  Color get greenChatMsg => const Color(0xFF30D158); // System green
+
+  @override
+  Color get lightGray2 => const Color(0xFF6D6D70); // Medium gray
+
+  @override
+  Color get backGround1 => const Color(0xFF121212); // Dark background
+
+  @override
+  Color get disabledColor => const Color(0xFF4A4A4A); // Dark disabled
+
+  @override
+  Color get pastelBlue => const Color(0xFF1C1C1E); // Dark pastel blue
+
+  @override
+  Color get primaryBlue => const Color(0xFF0A84FF); // System blue
+
+  @override
+  Color get deepBlue => const Color(0xFF0051D5); // Darker blue
+
+  @override
+  Color get strongRed => const Color(0xFFFF453A); // System red
+
+  @override
+  Color get alertRed => const Color(0xFFFF453A); // System red
+
+  @override
+  Color get softRed => const Color(0xFF2C1B1A); // Dark red background
+
+  @override
+  Color get primaryGreen => const Color(0xFF30D158); // System green
+
+  @override
+  Color get mediumGreen => const Color(0xFF28CD41); // Medium green
+
+  @override
+  Color get lightGreen => const Color(0xFF1C2C1A); // Dark green background
+
+  @override
+  Color get paleGreen => const Color(0xFF1C2C1A); // Dark pale green
+
+  @override
+  Color get deepPink => const Color(0xFFFF2D92); // System pink
+
+  @override
+  Color get mediumGray => const Color(0xFF6D6D70); // Medium gray
+
+  @override
+  Color get steelBlueGray => const Color(0xFF48484A); // Dark steel blue gray
+
+  @override
+  Color get whatsappFooterColor => const Color(0xFF1C1C1E); // Dark footer
+
+  @override
+  Color get lightMintGreen => const Color(0xFF1C2C1A); // Dark mint green
+
+  @override
+  Color get emeraldGreen => const Color(0xFF30D158); // System green
+
+  @override
+  Color get darkGreen => const Color(0xFF28CD41); // Medium green
 }

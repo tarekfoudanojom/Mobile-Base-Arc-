@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_tdd/core/theme/colors/app_colors.dart';
 import 'package:flutter_tdd/core/theme/colors/app_light_colors.dart';
-import 'package:flutter_tdd/core/theme/text/app_text_style.dart';
 import 'package:flutter_tdd/core/theme/themes/app_theme.dart';
 
 class AppLightTheme extends AppTheme {
@@ -28,7 +27,7 @@ class AppLightTheme extends AppTheme {
         ),
       ),
       // textTheme: textTheme,
-      brightness: Brightness.dark,
+      brightness: Brightness.light,
       radioTheme: RadioThemeData(
         fillColor: WidgetStateProperty.all(_colorsLight.black),
       ),
@@ -38,7 +37,7 @@ class AppLightTheme extends AppTheme {
         checkColor: WidgetStateProperty.all(_colorsLight.primary),
       ),
       appBarTheme: AppBarTheme(
-        color: _colorsLight.appBarColor,
+        backgroundColor: _colorsLight.appBarColor,
         elevation: 0,
         centerTitle: true,
         // titleTextStyle: textTheme.headline2!.copyWith(color: _colorsLight.black),
@@ -106,6 +105,6 @@ class AppLightTheme extends AppTheme {
         onError: _colorsLight.white,
         surface: _colorsLight.primary,
         onSurface: _colorsLight.white,
-        brightness: Brightness.dark,
+        brightness: Brightness.light,
       );
 }

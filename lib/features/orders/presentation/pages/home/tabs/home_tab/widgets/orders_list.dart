@@ -24,6 +24,7 @@ class OrdersList extends StatelessWidget {
     final ordersList = orders!; // Safe to use ! here since we checked for null above
 
     return CupertinoScrollbar(
+      controller: controller.scrollController,
       child: SmartRefresher(
         controller: controller.refreshController,
         enablePullDown: true,

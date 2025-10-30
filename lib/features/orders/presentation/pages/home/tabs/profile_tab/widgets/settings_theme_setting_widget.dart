@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tdd/core/bloc/device_cubit/device_cubit.dart';
 import 'package:flutter_tdd/core/localization/translate.dart';
 import 'package:flutter_tdd/core/theme/colors/colors_extension.dart';
+import 'package:flutter_tdd/core/routes/router_imports.gr.dart';
+import 'package:auto_route/auto_route.dart';
 import 'settings_setting_card_widget.dart';
 
 class SettingsThemeSettingWidget extends StatelessWidget {
@@ -33,9 +35,10 @@ class SettingsThemeSettingWidget extends StatelessWidget {
             value: isDarkMode,
             onChanged: (value) {
               final newThemeMode = value ? AdaptiveThemeMode.dark : AdaptiveThemeMode.light;
-              onTap();
-              // Update theme immediately
+              // Update DeviceCubit
               context.read<DeviceCubit>().updateThemeMode(newThemeMode);
+              
+              // Update AdaptiveTheme
               switch (newThemeMode) {
                 case AdaptiveThemeMode.light:
                   AdaptiveTheme.of(context).setLight();
@@ -47,6 +50,12 @@ class SettingsThemeSettingWidget extends StatelessWidget {
                   AdaptiveTheme.of(context).setSystem();
                   break;
               }
+              
+              // Close any open modals first
+              Navigator.of(context).popUntil((route) => route.isFirst);
+              
+              // Navigate to home page using AutoRoute
+              context.router.push(const HomeRoute());
             },
             activeTrackColor: context.colors.slateGray,
             inactiveTrackColor: context.colors.warning.withValues(alpha: 0.3),
